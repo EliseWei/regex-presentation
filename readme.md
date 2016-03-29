@@ -1,49 +1,30 @@
-> Please read our slide creation guidelines in [the wiki](https://github.com/girldevelopit/gdi-slides-template/wiki). Then, delete this banner and add the specifics about your class below.
+# Intermediate JavaScript
 
-# Add Your Course Title Here
-
-Slides and materials are hosted at [http://example.com/](http://example.com/).
+Slides and materials are hosted at [http://gdiphilly.github.io/Intermediate-JS](http://gdiphilly.github.io/Intermediate-JS).
 
 ## Course description
 
-Use this space for a short description of your course. We recommend using the description from your meetup event.
-
-**Cost:** 
-
-**Dates:** 
-
-**Location:** 
-
-A limited number of scholarships are available for those with a financial hardship. To apply, contact us at...
+You've completed Intro to JS and are ready for the next level! Join us for a dive into the more advanced aspects of JavaScript. By the end of class, you will be able to build more advanced front-end applications with state storage, asynchronous data processing, and geo data from the browser. You will also learn effective debugging methods, and produce clean, maintanable JavaScript.
 
 
 ### Prerequisites:
-
-List any prerequisites for this class, including any previous classes or the equivalent self-study or real-world skills.
-
-You should have:
-
-(a) taken Intro or Intermediate HTML/CSS through Girl Develop It, or
-
-(b) built and managed websites on your own,
-
-**And also:**
-
-(a) taken intro to JavaScript through Girl Develop It, or
-
-(b) be familiar with syntax, arrays, conditionals, for and while loops, event handling, jQuery, AJAX requests, and handling JSON responses.
+You must have an understanding of JavaScript basics in order to benefit from this intermediate-level class. Students who have taken our Intro to JavaScript class and feel comfortable with the basics are good candidates for this course. [Take this JavaScript Basics Quiz](http://cfarm.github.io/gdi-js-quiz/) and share your score with us when signing up.
 
 
 ### Tech requirements:
-
- - Your laptop (Mac, PC, or Linux are all okay).
- - A modern web browser - either Chrome or Firefox with Firebug installed.
- - A text editor. We recommend Sublime Text 2 (free; available for Mac, PC, and Linux).
-
+ - Your laptop. (Note: a netbook or tablet is NOT a substitute!)
+ - A modern browser such as Chrome or Firefox installed.
+ - A text editor. We recommend Sublime Text 3 (It's free and available for Mac/PC/Linux).
+ 
 
 ### Topics covered:
 
- - The topics you plan to cover
- - Written in list form
- - Here's another one
+ - JS tools for testing, "linting," and minification 
+ - Code organization, clean code, and debugging
+ - Design patterns 
+ - Code performance 
+ - AJAX requests and synchronous vs asynchronous processes 
+ - Regular expressions 
+ - Cookie management 
+ - Introductions to MVC frameworks (Angular, React, etc), Node.js, libraries (jQuery), test-driven development, and object-oriented programming 
 
