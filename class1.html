@@ -55,12 +55,222 @@
                 </section>
                 <section>
 					<h1>Intermediate JavaScript</h1>
-                    <!-- <img src="img/circle-gdi-logo.png" alt="GDI Logo"/> -->
 					<h3>Girl Develop It Philly</h3>
 					<p><a href="http://gdiphilly.github.io/Intermediate-JS" target="_blank">http://gdiphilly.github.io/Intermediate-JS</a></p>
                     <p><a href="">exercise files</a></p>
 				</section>
-				
+                <section>
+                    <h3>Welcome!</h3>
+                    <div class="left-align">
+                        <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+                        <p><a href="https://www.girldevelopit.com/code-of-conduct">Our code of conduct</a></p>
+                        <p>Some "rules"</p>
+                        <ul>
+                            <li>We are here for you!</li>
+                            <li>Every question is important</li>
+                            <li>Help each other</li>
+                            <li>Have fun</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h3>Introduce yourself</h3>
+                    <ul>
+                        <li>Who are you?</li>
+                        <li>What do you hope to get out of this class?</li>
+                        <li>What smell evokes the most pleasant memory?</li>
+                    </ul>
+                </section>
+            <!-- Debugging -->
+                <section>
+                    <h3>Let's get started</h3>
+                    <ul>
+                        <li>Open the sample files in your text editor</li>
+                        <li>Open index.html in your browser</li>
+                        <li>Examine debugging.js</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Object review</h3>
+                    <ul>
+                        <li>Is stored in a variable</li>
+                        <li>Curly braces {}</li>
+                        <li>Properties are written as a name and a value, which are separated by a colon</li>
+                        <li>Properties are separated by commas</li>
+                        <li>Properties are accessed using square bracket or dot notation</li>
+                    </ul>
+                    <pre><code contenteditable class="javascript">
+    myObject['error']
+    myObject.arr
+              </code></pre>
+                </section>
+                <section>
+                    <h3>Data types review</h3>
+                    <ul>
+                        <li><code>myObject.info</code> is <span class="fragment">a number (specifically, a float)</span></li>
+                        <li><code>myObject.warnMe</code> is <span class="fragment">a function</span><span class="fragment"> that returns a string</span></li>
+                        <li><code>myObject.error</code> is <span class="fragment">an object</span></li>
+                        <li><code>myObject.arr</code> is <span class="fragment">an array</span><span class="fragment"> of objects</span></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Open the console</h3>
+                    <ul>
+                        <li>Chome: CMD + OPT + J <em>or</em><br />View &gt; Developer &gt; JavaScript Console</li>
+                        <li>Firefox: F12 to open Firebug <em>or</em><br />Tools &gt; Web Developer &gt; Firebug &gt; Open Firebug</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>The JavaScript Console</h3>
+                    <img src="img/console1.png" alt="initial view of the console" />
+                    <p class="fragment">There's a lot going on, in there!</p>
+                </section>
+                <section>
+                    <h3>Console Messages</h3>
+                    <p class="left-align">The console is specifically for looking "under the hood" at what is going on in the browser.</p>
+                    <p class="fragment left-align">Line numbers at the right link to the code that generated the message</p>
+                    <p class="fragment left-align">Add console messages to send yourself notes</p>
+                    <p class="fragment left-align">Different kinds of messages have different behaviors and appearances</p>
+                    <p class="fragment left-align">Console messaging will typically be stripped out of production code</p>
+                </section>
+                <section>
+                    <h3>So let's look at that error</h3>
+                </section>
+                <section>
+                    <p style="padding: 0 13% 20px;">Console messages can tell you what has already happened. <br /></p>
+                    <p style="padding: 0 13%;" class="fragment">Breakpoints will get you into the code evaluation process.</p>
+                </section>
+                <section>
+                    <h3>Breakpoints</h3>
+                    <p>Pause the code evaluation process, allowing you to...</p>
+                    <ul>
+                        <li>check the values of variables at specific points</li>
+                        <li>see the "call stack" or history of called functions for a certain point in the code</li>
+                        <li>"step through" the evaluation process line by line</li>
+                        <li>use the console throughout, to experiment</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>3 Ways to set a Breakpoint</h3>
+                    <ol>
+                        <li>From the sources panel</li>
+                        <li>On "subtree modifications" of an element</li>
+                        <li>From the code itself</li>
+                    </ol>
+                    <p class="left-align">The sources panel also lets you right click to set a breakpoint that only breaks when certain conditions are met.</p>
+                    <p><br />Let's do it!</p>
+                </section>
+                <section>
+                    <h3>Paused on a breakpoint</h3>
+                    <img class="right" src="img/breakpoint.png" alt="right section of sources panel, when paused" />
+                    <ol class="left" style="width: 450px;">
+                        <li>Step controls: Continue, step over, step in, step out</li>
+                        <li>Deactivate breakpoints, break on exceptions</li>
+                        <li>Call stack</li>
+                        <li>Variable scopes</li>
+                        <li>List of breakpoints</li>
+                    </ol>
+                    <p class="clear">And much more</p>
+                </section>
+                <section>
+                    <h3>Debugging resources</h3>
+                    <p><a href="https://developer.chrome.com/devtools/docs/javascript-debugging" target="_blank">From Chrome</p>
+                    <p><a href="http://www.creativebloq.com/javascript/javascript-debugging-beginners-3122820" target="_blank">From CreativeBloq</p>
+                </section>
+                <section>
+                    <h3>Function expression vs declaration</h3>
+                    <p><a href="https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/" target="_blank">JavaScript, JavaScript</a> by Angus Croll of "If Hemingway Wrote JavaScript"</p>
+                </section>
+            <!-- Window native properties -->
+				<section>
+                    <h3>Window</h3>
+                    <p>Window is the "global scope" for client-side JavaScript.</p>
+                    <ul>
+                        <li class="fragment">In the console, type <code>window</code> and press enter</li>
+                        <li class="fragment">The window is an object with properties</li>
+                        <li class="fragment">We call these "native" properties, because the browser supplies them</li>
+                        <li class="fragment">Sometimes browsers vary!</li>
+                    </ul>
+                    <p class="fragment"><br />Now, type <code>window</code> and a period but <em>don't</em> press enter.</p>
+                </section>
+                <section>
+                    <h3>The Global Scope</h3>
+                    <p class="left-align">Creating a variable outside of a function adds it to the global scope.</p>
+                    <p class="left-align fragment">And the window is the global scope.</p>
+                    <p class="left-align fragment">In the console, create a variable <code>myVar</code> and give it any value.</p>
+                    <p class="left-align fragment">Then check for the existence of <code>window.myVar</code></p>
+                </section>
+                <section>
+                    <h3>Navigator</h3>
+                    <p><code>window.navigator</code></p>
+                    <ul>
+                        <li>Contains lots of info about the browser itself</li>
+                        <li>UserAgent: identifies the maker, version, and rendering engine</li>
+                        <li>Geolocation: contains any geo-related data
+                            <ul>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition" target="_blank">getCurrentPosition</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h3>What is a callback function?</h3>
+                        <p>Instructions passed to a function to tell it what to do with its output, most often used for asynchronous processes.</p>
+                    </section>
+                    <section>
+                        <h3>Long explanation</h3>
+                        <p class="left-align">If you visit the reference librarian and ask for help finding something, it could take a while. They might ask, "When I find the information, what should I do with it?"</p>
+                        <p class="left-align fragment">You might ask them to print it out and mail it to your house, or call you to come pick it up. You might ask them to email it to you, or just send you instructions on how to find it again for yourself.</p>
+                        <p class="left-align fragment"><br />A callback function is the answer to the question "What should I do when your answer is ready?"</p>
+                    </section>
+                </section>
+                <section>
+                    <h3>Some native features don't work on local files</h3>
+                    <p>...like geolocation. <a href="https://jsbin.com/?console" target="_blank">Open a jsbin console</a>.</p>
+                </section>
+                <section>
+                    <h3>getCurrentPosition</h3>
+                    <pre><code contenteditable class="javascript">
+    navigator.geolocation.getCurrentPosition(
+        function(data) {
+            console.log(data);
+        }
+    );
+                    </code></pre>
+                    <p class="left-align">We call <code>getCurrentPosition</code> and pass in an anonymous function. The anonymous function accepts a <code>data</code> parameter and logs it to the console.
+                </section>
+                <section>
+                    <h3>getCurrentPosition</h3>
+                    <p>Two things will likely happen...</p>
+                    <ol>
+                        <li>The browser will ask if you’d like to allow the page to know your location (yes)</li>
+                        <li>It may take a moment (or a long moment) for a result to show in the console</li>
+                    </ol>
+                </section>
+                <section>
+                    <h3>getCurrentPosition</h3>
+                    <p>Examine the returned object. How would we access the latitude and longitude?</p>
+                    <pre class="fragment"><code contenteditable class="javascript">
+    data.coords.latitude
+    data.coords.longitude
+              </code></pre>
+                </section>
+                <section>
+                    <h3>Refactor</h3>
+                    <pre><code contenteditable class="javascript">var lat, lon;
+var onGeoComplete = function(geoloc) {
+    if (geoloc &amp;&amp; geoloc.coords) {
+        lat = geoloc.coords.latitude;
+        lon = geoloc.coords.longitude;
+        console.log('lat: ' + lat + ', lon: ' + lon);
+    } else {
+        console.log('no geo coordinates');
+    }
+}
+navigator.geolocation.getCurrentPosition(onGeoComplete);</code></pre>
+                </section>
+
 			<!-- Examples of code slides-->
 				<section>
 					  <h2>But wait! We teach code</h2>
