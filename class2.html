@@ -179,6 +179,56 @@
     };
                     </code></pre>
                 </section>
+            <!-- Cookies -->
+                <section>
+                    <h2>Cookies</h2>
+                    <img src="img/fortune_cookie.jpg" alt="photo of fortune cookies. this is a joke." />
+                </section>
+                <section>
+                    <h3>Cookies</h3>
+                    <p class="left-align">Cookies are little bits of data stored by a website to a browser, that can usually only be accessed by that site. They are typically used to save the "state" of something across page loads or across visits. Some common uses:</p>
+                    <ul>
+                        <li>Save a user's logged-in state (Authentication)</li>
+                        <li>Save a user's shopping cart (sort of)</li>
+                        <li>Show the date of the user's last visit</li>
+                        <li>Save display preferences like list vs gallery view, sort order &amp; filters, etc.</li>
+                        <li>Save preferences like "Don't show this again"</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>More tasty tidbits</h3>
+                    <p class="left-align">The name "cookie" is loosely derived from "packets" or tiny chunks of information sent over a network and the fact that these packets contained messages to the software. Like a fortune cookie.</p>
+                    <p class="left-align fragment">Browsers will support at least 50 cookies per domain, and a maximum cookie length of 4096 bytes or more, depending on the browser.</p>
+                    <p class="fragment"><br />That's a lot of big cookies.</p>
+                </section>
+                <section>
+                    <section>
+                        <h3>The recipe</h3>
+                        <p class="left-align">The cookie collection is represented by a string that is a property of the document object. You can see the full list of available cookies for a given domain by accessing "document.cookie"</p>
+                        <p class="left-align">To set a cookie, provide:</p>
+                        <ul>
+                            <li>Name</li>
+                            <li>Value</li>
+                            <li>Expiration or Max Age (optional)</li>
+                            <li>Domain and/or Path (optional)</li>
+                            <li>Secure and/or HttpOnly (optional)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Expiration and Max Age</h3>
+                        <p class="left-align">Used to specify how long the cookie should last. Expiration specifies a specific end date/time. Max-age specifies a number of seconds from the time the cookie is set. If not explicitly set, these will default the cookie to be destroyed at the end of the user's session. Max-age does not have deep support in older browsers, so choose judiciously.</p>
+                    </section>
+                    <section>
+                        <h3>Domain and/or Path</h3>
+                        <p class="left-align">For performance, security, or user experience, you can limit the availability of a cookie, even within your own site.</p>
+                        <p class="left-align"><span class="blue">Domain</span>: from a subdomain, specify that the cookie is available across the whole site. Or limit a cookie set at the top level domain to use on a certain subdomain. Defaults to the domain and subdomain where it is set.</p>
+                        <p class="left-align"><span class="blue">Path</span>: similarly allows you to limit a cookie to certain directory folders. Defaults to the root <code>/</code> of the site (not limited).</p>
+                    </section>
+                    <section>
+                        <h3>Secure and/or HttpOnly</h3>
+                        <p class="left-align">Secure specifies that the cookie should only be available on secure requests, and HttpOnly specifies that the cookie should not be made available through any kind of requests other than http or https (for example, not available to javascript). These default to false, and are set to true simply by adding the attributes to the cookie without a value.</p>
+                    </section>
+                </section>
 			</div>
   		<footer>
         <div class="copyright">
