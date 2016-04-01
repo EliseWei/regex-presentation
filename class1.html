@@ -102,7 +102,7 @@
                     <pre><code contenteditable class="javascript">
     myObject['error']
     myObject.arr
-              </code></pre>
+                    </code></pre>
                 </section>
                 <section>
                     <h3>Data types review</h3>
@@ -181,6 +181,22 @@
                     <h3>Function expression vs declaration</h3>
                     <p><a href="https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/" target="_blank">JavaScript, JavaScript</a> by Angus Croll of "If Hemingway Wrote JavaScript"</p>
                 </section>
+                <section>
+                    <section>
+                        <h3>A quick word on working locally</h3>
+                        <p class="left-align">Much front-end development can be done in your local file system with no special setup.</p>
+                        <pre><code contenteditable class="html">file:///Users/yourname/git/...</code></pre>
+                        <p class="fragment left-align">However, we'll be using some advanced features of the browser that may, often for security reasons, only work on a "real" web page.</p>
+                        <p class="left-align fragment">We'll be using <a target="_blank" href="https://jsbin.com/?console">jsbin.com</a> to get around that, today.</p>
+                    </section>
+                    <section>
+                        <h3>The real solution</h3>
+                        <p>Set up a local development server.</p>
+                        <p><a target="_blank" href="http://sweetme.at/2013/08/21/simple-local-http-server-with-python/">Easiest (Python)</a></p>
+                        <p><a target="_blank" href="https://developer.mozilla.org/en-US/Learn/Common_questions/Set_up_a_basic_working_environment">Very detailed (Apache)</a></p>
+                        <p><a target="_blank" href="https://gist.github.com/willurd/5720255">Long list of simple-setup servers</a></p>
+                    </section>
+                </section>
             <!-- Window native properties -->
 				<section>
                     <h3>Window</h3>
@@ -220,7 +236,7 @@
                     </section>
                     <section>
                         <h3>Long explanation</h3>
-                        <p class="left-align">If you visit the reference librarian and ask for help finding something, it could take a while. They might ask, "When I find the information, what should I do with it?"</p>
+                        <p class="left-align">If you visit the reference librarian and ask for help finding some information, it could take a while. They might ask, "When I find the information, what should I do with it?"</p>
                         <p class="left-align fragment">You might ask them to print it out and mail it to your house, or call you to come pick it up. You might ask them to email it to you, or just send you instructions on how to find it again for yourself.</p>
                         <p class="left-align fragment"><br />A callback function is the answer to the question "What should I do when your answer is ready?"</p>
                     </section>
@@ -254,35 +270,145 @@
                     <pre class="fragment"><code contenteditable class="javascript">
     data.coords.latitude
     data.coords.longitude
-              </code></pre>
+                    </code></pre>
                 </section>
                 <section>
                     <h3>Refactor</h3>
-                    <pre><code contenteditable class="javascript">var lat, lon;
-var onGeoComplete = function(geoloc) {
-    if (geoloc &amp;&amp; geoloc.coords) {
-        lat = geoloc.coords.latitude;
-        lon = geoloc.coords.longitude;
-        console.log('lat: ' + lat + ', lon: ' + lon);
-    } else {
-        console.log('no geo coordinates');
+                    <p>Now that we know what the data looks like...</p>
+                    <pre><code contenteditable class="javascript">
+    var lat, lon;
+    var onGeoComplete = function(geoloc) {
+        if (geoloc &amp;&amp; geoloc.coords) {
+            lat = geoloc.coords.latitude;
+            lon = geoloc.coords.longitude;
+            console.log('lat: ' + lat + ', lon: ' + lon);
+        } else {
+            console.log('no geo coordinates');
+        }
     }
-}
-navigator.geolocation.getCurrentPosition(onGeoComplete);</code></pre>
+    navigator.geolocation.getCurrentPosition(onGeoComplete);
+                    </code></pre>
                 </section>
-
-			<!-- Examples of code slides-->
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>Javascript</p>
-					  <pre><code contenteditable class="javascript">
-                function helloWorld(){
-                  var name = 'GDI';
-                  alert("Hi, " + name)
-                }
-              </code></pre>
-				</section>
-
+                <section>
+                    <h2>Stretch break!</h2>
+                    <img src="img/cat_stretch.jpg" alt="kitty!" />
+                </section>
+            <!-- AJAX -->
+                <section>
+                    <h3>AJAX:<br />Asynchronous&nbsp;JavaScript And&nbsp;XML</h3>
+                    <p class="left-align">Normally, the rendering of a web page is a relatively sequential process. File top to bottom.</p>
+                    <p class="left-align fragment">With AJAX, we are using javascript to request additional data outside the normal page-load process, often long after the initial load is complete.</p>
+                </section>
+                <section>
+                    <h3>AJAX: Where is it used?</h3>
+                    <ul>
+                        <li>New messages in your feed</li>
+                        <li>"Infinite" scroll</li>
+                        <li>Product quickview</li>
+                        <li>Auto-complete or auto-suggested results</li>
+                        <li>Requests to APIs</li>
+                        <li>Multi-page forms, loading search results, and anywhere a large or dynamically-generated set of new information appears without a page load</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Asynchronous vs Synchronous</h3>
+                    <div class="left" style="width: 47%; margin-right: 6%;">
+                        <strong class="blue">Synchronous</strong>
+                        <ul>
+                            <li>tasks occur strictly in sequence</li>
+                            <li>easy to understand, predict, manage</li>
+                            <li>only possible with simple scripts</li>
+                            <li>sometimes referred to as "blocking"</li>
+                        </ul>
+                    </div>
+                    <div class="right" style="width: 47%;">
+                        <strong class="blue">Asynchronous</strong>
+                        <ul>
+                            <li>order of tasks may have gaps in it</li>
+                            <li>multiple processes can be interleaved</li>
+                            <li>can result in "race conditions"</li>
+                            <li>callbacks and timeouts are good indicators</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h3>What do these gaps look like?</h3>
+                    <p class="left-align">When you submit a purchase and the page tells you not to refresh or hit the back button. Then it takes you to the confirmation page.</p>
+                </section>
+                <section>
+                    <h3>XML: Extensible Markup Language</h3>
+                    <p class="left-align">XML is a markup language and file format used to store and transmit data. It is extremely flexible: HTML is a subset of XML.</p>
+                    <img src="img/xml.png" alt="sample of XML" />
+                </section>
+                <section>
+                    <h3>AJAX and XML</h3>
+                    <p class="left-align">AJAX was originally developed for use with XML, but you can use it to request many different things. Most often JSON or HTML.</p>
+                </section>
+                <section>
+                    <h3>JSON: JavaScript Object Notation</h3>
+                    <p class="left-align">JSON is a newer, popular file format for storing and transmitting data. It looks like JS objects! It requires less markup than XML, and has a less formal feel.</p>
+                    <img src="img/json.png" alt="sample of JSON" />
+                </section>
+                <section>
+                    <h3>Let's develop it!</h3>
+                    <p>In your <em>real</em> console...</p>
+                    <pre><code contenteditable class="javascript">
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://jsonplaceholder.typicode.com/users/2/');
+                    </code></pre>
+                    <ol>
+                        <li>create the request object</li>
+                        <li>set some details of the request, like the type of request (GET) and the url to ask for</li>
+                    </ol>
+                    <pre><code contenteditable class="javascript">
+    xhr.send(null);
+                    </code></pre>
+                    <ol start="3" style="width: 100%">
+                        <li>send the request</li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>Wooo!</h2>
+                    <img src="img/woo_cat.jpg" alt="kitty!" />
+                </section>
+                <section>
+                    <h3>Handling the response</h3>
+                    <p>We know we're getting data back! Now what?</p>
+                    <pre><code contenteditable class="javascript">
+    xhr.onreadystatechange = function () {
+        var DONE = 4; // readyState 4 means the request is done.
+        var OK = 200; // status 200 is a successful return.
+        if (xhr.readyState === DONE) {
+            if (xhr.status === OK) {
+                // Replace this with a callback function!
+                console.log(xhr.responseText);
+            } else {
+                // An error occurred during the request.
+                console.log('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(null);
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>AJAX Concerns</h3>
+                    <p>AJAX is great for all the things we've been discussing, but what are some possible risks?</p>
+                    <ul class="fragment">
+                        <li>security</li>
+                        <li>counterfeit</li>
+                        <li>phishing</li>
+                        <li>copyright violation</li>
+                        <li>etc.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>CORS: Cross-Origin Resource Sharing</h3>
+                    <p>At the server-level, the admin can specify what types of requests to permit.</p>
+                </section>
+                <section>
+                    <h2>Break time!</h2>
+                </section>
 			</div>
   		<footer>
         <div class="copyright">
