@@ -137,7 +137,8 @@
                         1. In HTML, create a link to the website of your choice using the [Codepen](http://codepen.io/pen/) website. 
                         2. Using a JavaScript "onclick" event, make clicking on the link alert the link’s "href". 
 
-                        Hint: never used the "onclick" event before, and not sure how to use it? Check out w3schools.com for <a href="http://www.w3schools.com/jsref/event_onclick.asp">some documentation and examples</a>
+
+                        **Hint:** never used the "onclick" event before, and not sure how to use it? Check out w3schools.com for <a href="http://www.w3schools.com/jsref/event_onclick.asp">some documentation and examples</a>
                     </script>
                 </section>
 
@@ -162,61 +163,182 @@ var petProduct = {
 
                 <section data-markdown>
                     <script type="text/template">
-                        
+                        ## Uses for object-oriented programming
+
+                        * Model physical concepts more clearly in your code
+                        * Make your code easier to read
+                        * Create code that is more easily maintainable and reusable
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Construtors and objects
+
+### Objects 
+
+```javascript
+var petProduct = {
+    name: 'Catnip', // attribute
+    category: 'Plants that cats like', // attribute
+    buy: function() { // method
+        // Code that adds product to shopping cart
+    },
+    price: 5 // attribute
+};
+```
+
+When we talk about objects, we're interested in two main concepts:
+
+* Attributes: object characteristics
+* Methods: object functionality
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Group exercise: Shapes
+Think about these geometric shapes:
+
+circle, square, rectangle, star, rhombus, triangle
+
+What are some attributes shared by all shapes?
+What are some methods that can be applied to all shapes?
+Are there any attributes or methods that are unique to only one shape? ... to some shapes?
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Class-based inheritance
+Imagine going shopping for some cat food.
+
+You go to the pet store with a concept of what "cat food" is.
+You find a particular cat food brand with the qualities your vet told you to look for.
+You purchase the tuna flavor of this brand because your cat loves tuna.
+In object-oriented terms, we say that you have purchased an instance of the class of objects known as cat foods.
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Prototypal inheritance
+Let's imagine another way of shopping for cat food.
+
+You go to the pet store with an empty bag of cat food.
+You ask the dealer for a new bag of the same cat food.
+The brand, price, and flavor of the cat food are the same, but the bag is full and fresh.
+You purchase this particular bag of cat food.
+In object-oriented terms, we say that you have purchased an instance of cat food based off of a prototype, from which it inherited some attributes and methods.
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Creating new objects
+
+In JavaScript, we use a constructor function to initialize new objects, and we use the **new** keyword to call the constructor.
+
+```javascript
+// Create a constructor function for new products
+function PetProduct() {
+    // Set attributes of all new products
+    this.category = 'Cats';
+}
+
+var kittenProduct = new PetProduct();
+
+// kittenProduct can access properties we defined in PetProduct
+console.log(kittenProduct.category);    // 'Cats'
+```
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Adding Arguments
+
+```javascript
+// Create a constructor function for new cars
+function PetProduct(name, category, price) {
+    // Set the given attributes of this object
+    this.name = name;
+    this.category = category;
+    this.price = price;
+
+    // Set attributes of all new cars, independent of arguments
+    this.category = 'Cats';
+}
+
+var kittenProduct = new PetProduct('Catnip', 'Cats', 5);
+
+// kittenProduct can access properties we defined in PetProduct
+console.log(kittenProduct.category);    // 'Cats'
+console.log(kittenProduct.name);        // 'Catnip'
+```
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Extending the prototype
+The prototype is the collection of all the attributes and methods that the object knows about.
+
+The prototype property of an object is used primarily for inheritance: methods and attributes on a function's prototype property are available to instances of that function. 
+
+The prototype can be considered the "original" object, from which "copies" (instances) inherit properties.
+
+Inheritance = Access to the properties and methods created by the parent object(s).
+
                     </script>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
                         
+## Extending the Prototype with new methods
+
+```javascript
+    function PetProduct() {
+        this.inventory = 100;
+    }
+
+    // Extend the prototype to define methods for new PetProducts
+    PetProduct.prototype.buy = function(quantity) {
+        this.inventory = this.inventory - quantity;
+    }
+
+    // Instantiate a new PetProduct
+    var kittenProduct = new PetProduct();
+
+    // kittenProduct can access methods defined in the prototype
+    console.log(kittenProduct.inventory);    // 100
+    kittenProduct.buy(20);
+    console.log(kittenProduct.inventory);    // 80
+```
                     </script>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        
-                    </script>
-                </section>
+                        ## Exercise: Creating objects
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
+Beginning with this [CodePen template](http://codepen.io/cfarm/pen/grxYqv?editors=0010), make the following changes to the Product constructor:
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
+1. Add arguments for name, category, and price
+1. Add properties for name, category, and price
+1. Create a method on the Product object called addToCart(). When that method is called, it should use console.log to output a string like "You added Kitten Mittens to your cart."
+1. Instantiate a new Product object and call the addToCart() method on it.
+1. Instantiate a second new Product object with different constructor arguments.
+1. Bonus: Make the addToCart() method print your message to the HTML on the page using [jQuery DOM manipulation](http://api.jquery.com/category/manipulation/) or [JavaScript's document.write() method](https://developer.mozilla.org/en-US/docs/Web/API/Document/write).
+1. Bonus: Make the addToCart() method accept a quantity to add to the shopping cart, and call it with different amounts.
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
+[View the solution](http://codepen.io/cfarm/pen/BKdBMV?editors=0010)
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        
                     </script>
                 </section>
 
