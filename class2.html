@@ -360,6 +360,18 @@ Beginning with this [CodePen template](http://codepen.io/cfarm/pen/grxYqv?editor
 
                 <section data-markdown>
                     <script type="text/template">
+                        ## Warm up exercise
+
+                        ### Goal: Understanding for loops and counters
+                        
+                        1. Create an array of `products` using the [Codepen](http://codepen.io/pen/) website.
+                        1. Use a `for loop` to instantiate a new Product object using properties from each item in the `products` list
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
                         ## Extending the prototype with new objects
 
 ```javascript
@@ -391,7 +403,7 @@ Beginning with this [Codepen template](), make the following changes:
 
 1. Create a new object called `PetProduct` that extends `Product`. Its constructor should also take in an `inventory` argument.
 2. Instantiate a new `PetProduct` object and call the `addToCart()` method on it.
-3. Add a method to `MusicVideo` called `addToWishlist()` that uses `console.log` to output a string like "You added Umbrella Hat for Cats to your Wishlist!"
+3. Add a method to `PetProduct` called `addToWishlist()` that uses `console.log` to output a string like "You added Umbrella Hat for Cats to your Wishlist!"
                         
                     </script>
                 </section>
@@ -411,41 +423,241 @@ Beginning with this [Codepen template](), make the following changes:
 
                 <section data-markdown>
                     <script type="text/template">
+                        ## Building HTML with OOJS
+
+You can create objects that know how to interact with your website.
+
+```javascript
+PetProduct.prototype.displayOnWebsite = function() {
+    var $productInfo = $('<p></p>');
+    $productInfo.text('You are buying a ' + this.name);
+
+    var $list = $('#product-list');
+    $list.append($productInfo);
+};
+```
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                    #### Exercise 3
+                    ##  Building HTML with OOJS
+
+                    Starting with this [Codepen template]() or your Codepen from the previous exercise:
+
+                    1. Update the `addToCart` function to display your message on the website using the jQuery `text()` and `append()` methods
+                    1. Update the `addToWishlist` function to display your message using the jQuery `html()` method inside of a div with the class "wishlist"
+                    1. Make an array of pet data with pet products, loop through them, and create a new `PetProduct` object for each, assigning them to the `dog` or `cat` category.
+                    1. Use jQuery to display the products for each category in separate lists on the page: a list of `dog` products and a list of `cat` products
+
+
+                    Hint: see [jQuery's documentation](http://api.jquery.com/category/manipulation/) for examples of DOM manipulation
                         
                     </script>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        
+
+                        #### Learn more: 
+
+                        ## [Intro to Object-Oriented JS](http://www.meetup.com/Girl-Develop-It-Philadelphia/events/229775797/) April 25th and April 27th
+
                     </script>
                 </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
-
                 
+
+                <section data-markdown>
+                    <script type="text/template">
+                        # Forms
+
+You can collect information from users to use in our Object-Oriented JavaScript with HTML forms.
+
+```html
+<form class="buy" id="catnip">
+    <h3>Catnip for sale</h3>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" value="1">
+    <button class="button" id="buy-catnip">Buy catnip!</button>
+</form>
+```
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                    ## Retrieving form data
+
+                    You retrieve the values of form elements using the value property.
+
+```javascript
+var quantity = document.getElementById('quantity').value;
+console.log (quantity);
+```
+
+Or do it with [jQuery](http://api.jquery.com/category/forms/): 
+```javascript
+var $quantity = $('#quantity').val();
+console.log ($quantity);
+```
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                    ## Events
+
+You can retrieve the value of a form at any time, like `onblur` (when a form element loses focus) or `onsubmit` (when the form element is submitted). `preventDefault` lets us hijack the form's default behavior so we can do stuff with JavaScript instead.
+
+```javascript
+var submitButton = document.getElementById('buy-catnip');
+submitButton.onclick = function (event) {
+    event.preventDefault();
+    var quantity = document.getElementById('quantity').value;
+    console.log (quantity);
+}
+```
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                    ## Events using jQuery
+
+Here's the same script with jQuery syntax:
+
+```javascript
+var $submitButton = $('#buy-catnip');
+$submitButton.click( function(event) {
+    event.preventDefault();
+    var $quantity = $('#quantity').val();
+    console.log ($quantity);
+});
+```
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        #### Exercise 4
+
+                        ## Add to cart form
+
+Use [this CodePen template](). Write your program with [vanilla JS](http://vanilla-js.com/) or [jQuery](http://api.jquery.com/category/forms/), your choice.
+
+1. In our HTML, find the form markup for buying a cat toy.
+2. Using a `submit` event, make the `addToCart()` function display the product name and price on the page. 
+2. Using an `onblur` event, create a new method on the `PetProduct` prototype that displays the quantity the user has chosen inside the buy button. For example, the button would say "Buy 4 Catnips!"
+
+Hint: Review <a href="http://cfarm.github.io/gdi-intro-js/class4.html#/10">the submit event</a> for documentation and examples
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Form Validation
+
+                        Often we want to check that users have input the correct types of data into our forms, or the required fields, before we save the data to a database or complete a transaction.
+
+                        <img src="img/email-validation.png" alt="Example of form validation on an email input field" />
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## HTML5 Form Validation
+
+                        With HTML5, we can have the browser perform the validation for us with some simple markup:
+
+```html                        
+<form id="email-signup">
+    <h3>Join the Kitten Party Club to find out about new kitten cams!</h3>
+    <div>
+        <label for="email">Your email:</label>
+        <input type="text" id="email" name="email" required/>
+    </div>
+  <button type="submit" class="button" id="email-submit">Join</button>
+</form>
+```
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## HTML5 Form Validation
+
+                        Besides the `required` attribute, we can also specify specific types of data our form inputs will accept as valid:
+
+```html                        
+<form id="email-signup">
+    <h3>Join the Kitten Party Club to find out about new kitten cams!</h3>
+    <div>
+        <label for="email">Your email:</label>
+        <input type="email" id="email" name="email" required/> <!-- now validates for an email address -->
+    </div>
+  <button type="submit" class="button" id="email-submit">Join</button>
+</form>
+```
+
+                    </script>
+                </section>
+
+
+
+                <section data-markdown>
+                    <script type="text/template">
+
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        
+                    </script>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        
+                    </script>
+                </section>                
 
 			</div>
   		<footer>
