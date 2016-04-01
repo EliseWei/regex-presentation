@@ -360,20 +360,52 @@ Beginning with this [CodePen template](http://codepen.io/cfarm/pen/grxYqv?editor
 
                 <section data-markdown>
                     <script type="text/template">
-                        
+                        ## Extending the prototype with new objects
+
+```javascript
+// The constructor function
+function PetClothing(name, category, price, size) {
+    PetProduct.call(this, name, category, price);
+    this.size = size;
+}
+// Extending the PetProduct object
+PetClothing.prototype = Object.create(PetProduct.prototype);
+
+// Instantiate a new PetClothing object
+var doggySweater = new PetClothing('Doggy sweater', 'dog clothings', 30, 'medium');
+```
+
+Because it inherits from PetProduct, PetClothing has the properties and methods available to PetProduct as well.
+
+
                     </script>
 
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
+                        #### Exercise 2
+                        ## Extending the prototype
+
+Beginning with this [Codepen template](), make the following changes:
+
+1. Create a new object called `PetProduct` that extends `Product`. Its constructor should also take in an `inventory` argument.
+2. Instantiate a new `PetProduct` object and call the `addToCart()` method on it.
+3. Add a method to `MusicVideo` called `addToWishlist()` that uses `console.log` to output a string like "You added Umbrella Hat for Cats to your Wishlist!"
                         
                     </script>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
+                        #### Exercise 2: Bonus
+                        ## Extending the prototype
                         
+                        1. Bonus: Use an array of data and a for loop to instantiate 5 `PetProduct` objects.
+                        1. Bonus: Make an array of product data with pet products and people products, loop through them, and decide on each one whether to make it a `Product` or `PetProduct` object.
+                    
+
+[View the solution](http://codepen.io/cfarm/pen/WwOKGq?editors=0010)
                     </script>
                 </section>
 
