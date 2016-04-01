@@ -187,14 +187,16 @@
                         <p class="left-align">Much front-end development can be done in your local file system with no special setup.</p>
                         <pre><code contenteditable class="html">file:///Users/yourname/git/...</code></pre>
                         <p class="fragment left-align">However, we'll be using some advanced features of the browser that may, often for security reasons, only work on a "real" web page.</p>
-                        <p class="left-align fragment">We'll be using <a target="_blank" href="https://jsbin.com/?console">jsbin.com</a> to get around that, today.</p>
+                        <p class="left-align fragment">We can use <a target="_blank" href="https://jsbin.com/?console">jsbin.com</a> to get around that.</p>
                     </section>
                     <section>
                         <h3>The real solution</h3>
                         <p>Set up a local development server.</p>
-                        <p><a target="_blank" href="http://sweetme.at/2013/08/21/simple-local-http-server-with-python/">Easiest (Python)</a></p>
+                        <p><a target="_blank" href="http://sweetme.at/2013/08/21/simple-local-http-server-with-python/">Easiest (Python, installed on Mac OSX)</a></p>
+                        <p><a target="_blank" href="https://technet.microsoft.com/en-us/library/cc732612(v=ws.10).aspx">Windows IIS</a></p>
                         <p><a target="_blank" href="https://developer.mozilla.org/en-US/Learn/Common_questions/Set_up_a_basic_working_environment">Very detailed (Apache)</a></p>
                         <p><a target="_blank" href="https://gist.github.com/willurd/5720255">Long list of simple-setup servers</a></p>
+                        <p class="left-align">Let's take no more than <em>10 minutes</em> to try and get this set up, but again, we can use jsbin, so don't worry if you can't get a dev server up and running.</p>
                     </section>
                 </section>
             <!-- Window native properties -->
@@ -242,9 +244,18 @@
                     </section>
                 </section>
                 <section>
-                    <h3>Some native features don't work on local files</h3>
-                    <p>...like geolocation. <a href="https://jsbin.com/?console" target="_blank">Open a jsbin console</a>.</p>
+                    <h3>Let's Develop It!</h3>
+                    <ol>
+                        <li>In index.html, switch from using debugging.js to script.js</li>
+                        <li>In your browser, refresh and make sure you have a clear console</li>
+                        <li>Open script.js in your text editor</li>
+                    </ol>
                 </section>
+                <section>
+                    <h3>Some native features don't work on local files</h3>
+                    <p>...like geolocation. If you didn't get a server running, now is the time to <a href="https://jsbin.com/?console" target="_blank">open a jsbin console</a>.</p>
+                </section>
+
                 <section>
                     <h3>getCurrentPosition</h3>
                     <pre><code contenteditable class="javascript">
@@ -350,8 +361,7 @@
                     <img src="img/json.png" alt="sample of JSON" />
                 </section>
                 <section>
-                    <h3>Let's develop it!</h3>
-                    <p>In your <em>real</em> console...</p>
+                    <h3>Let's Develop It!</h3>
                     <pre><code contenteditable class="javascript">
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://jsonplaceholder.typicode.com/users/2/');
@@ -366,6 +376,7 @@
                     <ol start="3" style="width: 100%">
                         <li>send the request</li>
                     </ol>
+                    <p class="fragment"><br />Check your "Resources" panel to see if it worked.</p>
                 </section>
                 <section>
                     <h2>Wooo!</h2>
@@ -380,7 +391,7 @@
         var OK = 200; // status 200 is a successful return.
         if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
-                // Replace this with a callback function!
+                // Soon, we'll replace this with a callback!
                 console.log(xhr.responseText);
             } else {
                 // An error occurred during the request.
@@ -408,6 +419,7 @@
                 </section>
                 <section>
                     <h2>Break time!</h2>
+                    <p>Then on to <a href="class2.html">part 2</a>.</p>
                 </section>
 			</div>
   		<footer>
