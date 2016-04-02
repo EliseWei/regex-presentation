@@ -2,7 +2,7 @@
 /* Homework Solution */
 
 // Base URL for API calls for this script. lat & lon query params have been removed.
-var flickrUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=37ebd5e264deebc27837c880a19f86ab&per_page=10&format=json&nojsoncallback=1';
+var flickrUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=df2d47c3f88a5d9012fbb764a015c0c4&per_page=10&format=json&nojsoncallback=1';
 
 // What to do with fetched geo data.
 var onGeoComplete = function(geoloc) {
