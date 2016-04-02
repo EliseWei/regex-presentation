@@ -578,10 +578,8 @@ Hint: Review <a href="http://cfarm.github.io/gdi-intro-js/class4.html#/10">the s
 ```html                        
 <form id="email-signup">
     <h3>Join the Kitten Party Club to find out about new kitten cams!</h3>
-    <div>
-        <label for="email">Your email:</label>
-        <input type="text" id="email" name="email" required/>
-    </div>
+    <label for="email">Your email:</label>
+    <input type="text" id="email" name="email" required>
   <button type="submit" class="button" id="email-submit">Join</button>
 </form>
 ```
@@ -591,73 +589,258 @@ Hint: Review <a href="http://cfarm.github.io/gdi-intro-js/class4.html#/10">the s
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## HTML5 Form Validation
+## HTML5 Input types
 
-                        Besides the `required` attribute, we can also specify specific types of data our form inputs will accept as valid:
+Besides the `required` attribute, we can also specify specific types of data our form inputs will accept as valid:
 
-```html                        
-<form id="email-signup">
-    <h3>Join the Kitten Party Club to find out about new kitten cams!</h3>
-    <div>
-        <label for="email">Your email:</label>
-        <input type="email" id="email" name="email" required/> <!-- now validates for an email address -->
-    </div>
-  <button type="submit" class="button" id="email-submit">Join</button>
-</form>
+```html
+<label for="email">Your email:</label>
+<input type="email" id="email" name="email" required> <!-- now validates for an email address -->
 ```
 
                     </script>
                 </section>
 
+<section data-markdown>
+<script type="text/template">
+## HTML5 Pattern attribute
+
+Validates the field against a Regular Expression pattern:
+
+```html
+<label for="email">Your email:</label>
+<input type="email" id="email" name="email" required pattern="/@/"> <!-- now validates for an email address that contains an @ symbol -->
+```
+
+Check out [Stop Validating Email Addresses With Regex](https://davidcel.is/posts/stop-validating-email-addresses-with-regex/) for why to use such a simple pattern.
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Min, max, and step
+
+For number types:
+
+* **min**
+* **Max**
+* **step**: for incrementing
+* **pattern**: optional fallback
+
+```html
+<!-- The pattern attribute is included here as an optional fallback for browsers which don't support the number field -->
+<input type="number" min="12" max="120" step="1" id="age" name="age" pattern="\d+">
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Maxlength
+
+For text fields (`<input>` and `<textarea>`):
+
+```html
+<label for="tweet-text">Tweet a thing</label>
+<textarea id="tweet-text" name="tweet-text" maxlength="140" rows="5"></textarea>
+```
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+#### Exercise 5
+
+## Validate our form inputs
+
+Using your Add to Cart form from Exercise 4 or [this CodePen template](), add HTML5 validate attributes that: 
+
+1. Make the quantity field required.
+1. Make the quantity accept only whole numbers between 1 and 100.
+1. Bonus: Make the quantity maximum the value of the `inventory` property on one of your `PetProduct` instances.
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Where's the JS?
+
+You might need JavaScript form validation if...
+
+* You need to support IE8 & IE9 (see [HTML5 form validation browser support](http://caniuse.com/#feat=form-validation))
+* You want to customize your error message copy
+* You want to style your error messages with CSS
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## novalidate attribute
+
+To use JavaScript validation, we want to disable the browser's default validation errors:
+
+```html
+<form id="email-signup" novalidate>
+  <h3>Join the Kitten Party Club to find out about new kitten cams!</h3>
+  <label for="email">Your email:</label>
+  <input type="email" id="email" name="email" required>
+  <button type="submit" class="button" id="email-submit">Join</button>
+</form>
+```
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## DOM Manipulation
+
+Remember [DOM manipulation](http://cfarm.github.io/gdi-intro-js/class3.html#/14)?
+
+1. Find the DOM node and store it in a variable
+1. Use methods to manipulate the node
+
+```javascript
+var emailForm = document.getElementById('email-signup');
+var emailInput = document.getElementById('email');
+var emailSubmitButton = document.getElementById('email-submit');
+```
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Create new DOM elements
+
+```javascript
+document.createElement(tagName);
+document.createTextNode(text);
+document.appendChild();
+```
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Create an error message
+
+```javascript
+var errorEl = document.createElement('span');
+var errorText = document.createTextNode('Please enter a valid email address, thank you muchly');
+errorEl.appendChild(errorText);
+errorEl.className = 'error'; // adds error class 
+emailForm.insertBefore(errorEl, emailInput); // inserts element into DOM with insertBefore() method
+```
+[Live Example](http://codepen.io/cfarm/pen/QNqxgq?editors=1010)
+
+```
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Add an event listener
+
+Versus `onsubmit()`: allows multiple event handlers for a single event type
+
+`addEventListener()` method takes two arguments: event type, and a callback function that receives notification when the specified event occurs.
+
+```javascript
+emailForm.addEventListener('submit', function() { 
+    // do something when form is submitted
+});
+```
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Constraint Validation API
+
+[HTML5 constraint validation API](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Data_form_validation#The_HTML5_constraint_validation_API)
+
+```javascript
+emailForm.addEventListener('submit', function(event) { 
+    var emailInputValue = emailInput.value;
+    if (emailInput.validity.valid) {
+        // yay it's valid, no error needed.
+    } else {
+        event.preventDefault();  
+        emailForm.insertBefore(errorEl, emailInput); // insert our error when invalid on submit
+    }
+});
+```
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+#### Exercise 6
+## Custom validation error
+
+Using your Add to Cart form from Exercise 5 or [this CodePen template]():
+
+1. Edit your form so that the browser will not validate with HTML5.
+1. Add vanilla JavaScript or jQuery to create a custom error message HTML element that says something like "quantity must be between 1 and 100"
+1. Add an event listener to your JS that displays your custom error message when the submit button is clicked
+1. Add CSS to style your message however you like.
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+#### Exercise 6: Bonus
+## Custom validation error
 
 
-                <section data-markdown>
-                    <script type="text/template">
+1. Bonus: remove the error message when the form input is corrected and valid.
+1. Bonus: make your JavaScript validity conditional remove the error message when the input is corrected and valid.
 
-                    </script>
-                </section>
+[View solution]()
+</script>
+</section>
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
+<section data-markdown>
+<script type="text/template">
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
+</script>
+</section>
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
+<section data-markdown>
+<script type="text/template">
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
+</script>
+</section>
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
+<section data-markdown>
+<script type="text/template">
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>
+</script>
+</section>
 
-                <section data-markdown>
-                    <script type="text/template">
-                        
-                    </script>
-                </section>                
+<section data-markdown>
+<script type="text/template">
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+
+</script>
+</section>               
 
 			</div>
   		<footer>
