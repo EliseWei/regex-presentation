@@ -815,8 +815,7 @@ If we could split this file up by feature it'd be a lot easier to update and mai
 <section>
 but then we'd have to load 3 separate files in our index.html:
 
-<pre><code contenteditable class="html">
-<script src="product.js"></script>
+<pre><code contenteditable class="html"><script src="product.js"></script>
 <script src="petProduct.js"></script>
 <script src="catFood.js"></script>
 <script src="doggySweater.js"></script>
@@ -863,6 +862,48 @@ Browsers don't yet support native JS modules.
 CommonJS is a module format that lets you export and import code between separate files. 
 
 A build process is then used - for example Gulp, Grunt, webpack
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+### Import & Export
+
+2 steps to write modules in CommonJS format:
+
+1. Make functions available to other modules with `module.exports`
+1. Require dependencies when you want to reuse code.
+
+
+```javascript
+function helloWorld() {
+    alert('Hello, world.')
+}
+
+module.exports = {
+    helloWorld: helloWorld
+}
+```
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+### Calling code from the module
+
+Require dependencies when you want to reuse code:
+
+```javascript
+var helloWorld = require('./helloWorld.js');
+
+helloWorld();
+```
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
 
 </script>
 </section>
