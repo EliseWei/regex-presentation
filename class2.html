@@ -868,8 +868,6 @@ A build process is then used - for example Gulp, Grunt, webpack
 
 <section data-markdown>
 <script type="text/template">
-### Import & Export
-
 2 steps to write modules in CommonJS format:
 
 1. Make functions available to other modules with `module.exports`
@@ -885,14 +883,6 @@ module.exports = {
     helloWorld: helloWorld
 }
 ```
-</script>
-</section>
-
-<section data-markdown>
-<script type="text/template">
-### Calling code from the module
-
-Require dependencies when you want to reuse code:
 
 ```javascript
 var helloWorld = require('./helloWorld.js');
