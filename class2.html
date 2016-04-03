@@ -867,6 +867,17 @@ Browsers don't yet support native JS modules.
 
 <section data-markdown>
 <script type="text/template">
+## CommonJS and Node
+
+CommonJS is a module format that lets you export and import code between separate files. 
+
+A build process is then used - for example Gulp, Grunt, webpack
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
 ## Setup exercise files
 
 1. [Install Node.js](https://nodejs.org/en/)
@@ -881,25 +892,34 @@ Browsers don't yet support native JS modules.
 
 <section data-markdown>
 <script type="text/template">
+#### Exercise 7
+## Organize your OOJS code
+
+1. Organize the code from `mySite.js` into separate files inside the `class2/js/` folder.
+1. Update the module.exports object in each module to export your functions.
+1. Import your dependencies into app.js using the `require` statement.
+1. Create new instances of your prototype objects in app.js, referencing your imported modules.
 
 </script>
 </section>
 
 <section data-markdown>
 <script type="text/template">
+### More about modules
 
-</script>
-</section>
-
-<section data-markdown>
-<script type="text/template">
-
+[Require.js](http://requirejs.org/) uses the [AMD module](http://wiki.commonjs.org/wiki/Modules/AsynchronousDefinition) format and does not need a build step, as it runs solely in the browser.
 </script>
 </section>
 
 <section id="tdd" data-markdown>
 <script type="text/template">
 ## Test-Driven Development
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+
 </script>
 </section>
 
