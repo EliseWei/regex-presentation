@@ -762,7 +762,6 @@ Using your Add to Cart form from Exercise 5 or [this CodePen template]():
 #### Exercise 6: Bonus
 ## Custom validation error
 
-
 1. Bonus: remove the error message when the form input is corrected and valid.
 1. Bonus: make your JavaScript validity conditional remove the error message when the input is corrected and valid.
 
@@ -770,38 +769,22 @@ Using your Add to Cart form from Exercise 5 or [this CodePen template]():
 </script>
 </section>
 
-<section id="tdd" data-markdown>
-<script type="text/template">
-## Test-Driven Development
-</script>
-</section>
-
 <section data-markdown>
 <script type="text/template">
+## jQuery Validation
 
-</script>
-</section>
+The [jQuery Validation plugin](http://jqueryvalidation.org/documentation/) is a great library for cross-browser support and simplified syntax.
 
-<section data-markdown>
-<script type="text/template">
-
-</script>
-</section>
-
-<section data-markdown>
-<script type="text/template">
-
-</script>
-</section>
-
-<section data-markdown>
-<script type="text/template">
-
-</script>
-</section>
-
-<section data-markdown>
-<script type="text/template">
+```javascript
+$( "#credit-card-form" ).validate({
+  rules: {
+    field: {
+      required: true,
+      creditcard: true
+    }
+  }
+});
+```
 
 </script>
 </section>
@@ -809,6 +792,97 @@ Using your Add to Cart form from Exercise 5 or [this CodePen template]():
 <section id="modules" data-markdown>
 <script type="text/template">
 ## Modules
+
+[Download exercise files]()
+
+ECMAScript 2015 ("ES6") adds modules as a native feature to JavaScript, meaning we can organize our code into separate script files and the browser will automatically run them in the order we need.
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Code organization 
+
+You have some JavaScript...
+
+It's getting pretty long! If we want to find and update the displayOnWebsite() method then we're scrolling through lots of other code to do so. 
+
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+If we could split this file up by feature it'd be a lot easier to update and maintain:
+
+* product.js
+* petProduct.js
+* catFood.js
+* doggySweater.js
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+but then we'd have to load 3 separate files in our index.html:
+
+```html
+<script src="product.js"></script>
+<script src="petProduct.js"></script>
+<script src="catFood.js"></script>
+<script src="doggySweater.js"></script>
+```
+
+What's wrong with this? 
+
+<ul>
+<li class="fragment">performance</li>
+<li class="fragment">maintenance</li>
+<li class="fragment">dependencies</li>
+</ul>
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## ES 2015 Modules
+Unlike other programming languages JavaScipt did not let you separate files and import them into other JS files natively - until ES6. 
+
+
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+
+</script>
+</section>
+
+<section id="tdd" data-markdown>
+<script type="text/template">
+## Test-Driven Development
 </script>
 </section>
 

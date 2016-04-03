@@ -1,0 +1,17 @@
+{
+  "author": "Catherine Farman <cfarman@gmail.com> (http://cfarman.com)",
+  "name": "gdi-intermediate-js-class-2",
+  "dependencies": {
+    "babel-core": "^6.7.4",
+    "babel-loader": "^6.2.4",
+    "jquery": "^2.2.2",
+    "webpack": "^1.12.14"
+  },
+  "version": "1.0.0",
+  "description": "exercise files for class 2 of gdi intermediate js ",
+  "devDependencies": {},
+  "scripts": {
+    "build": "webpack"
+  },
+  "license": "ISC"
+}
