@@ -620,16 +620,11 @@ Check out [Stop Validating Email Addresses With Regex](https://davidcel.is/posts
 <script type="text/template">
 ## Min, max, and step
 
-For number types:
-
-* **min**
-* **Max**
-* **step**: for incrementing
-* **pattern**: optional fallback
+The pattern attribute is included here as an optional fallback for browsers which don't support the number field.
 
 ```html
-<!-- The pattern attribute is included here as an optional fallback for browsers which don't support the number field -->
 <input type="number" min="12" max="120" step="1" id="age" name="age" pattern="\d+">
+```
 </script>
 </section>
 
@@ -641,7 +636,8 @@ For text fields (`<input>` and `<textarea>`):
 
 ```html
 <label for="tweet-text">Tweet a thing</label>
-<textarea id="tweet-text" name="tweet-text" maxlength="140" rows="5"></textarea>
+<textarea id="tweet-text" name="tweet-text" maxlength="140" rows="5">
+</textarea>
 ```
 </script>
 </section>
@@ -732,7 +728,6 @@ emailForm.insertBefore(errorEl, emailInput); // inserts element into DOM with in
 ```
 [Live Example](http://codepen.io/cfarm/pen/QNqxgq?editors=1010)
 
-```
 </script>
 </section>
 
@@ -740,7 +735,7 @@ emailForm.insertBefore(errorEl, emailInput); // inserts element into DOM with in
 <script type="text/template">
 ## Add an event listener
 
-Versus `onsubmit()`: allows multiple event handlers for a single event type
+Versus `onsubmit()`: allows multiple event handlers for a single event type, without risk of [overwriting others](http://codepen.io/cfarm/pen/PNJyoP?editors=1010).
 
 `addEventListener()` method takes two arguments: event type, and a callback function that receives notification when the specified event occurs.
 
