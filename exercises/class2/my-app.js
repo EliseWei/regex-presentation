@@ -136,6 +136,7 @@
 	    petProductModule.PetProduct.call(this, name, category, price, inventory);
 	    this.size = size;
 	}
+
 	// Extending the petProductModule.PetProduct object
 	PetClothing.prototype = Object.create(petProductModule.PetProduct.prototype);
 
