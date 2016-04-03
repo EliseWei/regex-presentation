@@ -620,7 +620,7 @@ For text fields (`<input>` and `<textarea>`):
 
 ## Validate our form inputs
 
-Using your Add to Cart form from Exercise 4 or [this CodePen template](), add HTML5 validate attributes that: 
+Using your Add to Cart form from Exercise 4 or [this CodePen template](http://codepen.io/cfarm/pen/vGemXO), add HTML5 validate attributes that: 
 
 1. Make the quantity field required.
 1. Make the quantity accept only whole numbers between 1 and 100.
@@ -927,9 +927,69 @@ helloWorld.hello();
 
 <section id="tdd" data-markdown>
 <script type="text/template">
+
 ## Test-Driven Development
+
+First, write your test case that defines what will happen based on user behavior or interaction.
+
+For example:
+
+* "when I click the submit button, an alert function is triggered."
+* "when I click the submit button, an alert function is triggered."
+
 </script>
 </section>
+
+<section data-markdown>
+<script type="text/template">
+
+Second: write the function that makes the test pass.
+
+Test: "when I click the submit button, an alert function is triggered."
+
+Solution:
+
+```javascript
+button.onclick = function(event) {
+    event.preventDefault();
+    alert('hello again!');
+}
+```
+
+</script>
+</section>      
+
+<section data-markdown>
+<script type="text/template">
+
+## JS Assessment
+
+Setup [JS Assessment](https://github.com/rmurphey/js-assessment) locally:
+
+1. In Terminal navigate to the `class2/js-assessment` folder
+2. Run `npm start`
+3. Go to http://localhost:4444/ in your browser
+4. Open 'app' folder inside our class files in Sublime Text.
+
+</script>
+</section>      
+
+<section data-markdown>
+<script type="text/template">
+
+#### Exercise 8
+## JS Assessment
+
+Write the following JS Assessment functions so that they pass their corresponding tests:
+
+1. arrays.js
+1. flowControl.js
+1. objects.js
+1. async.js
+1. regex.js
+
+</script>
+</section>      
 
 <section data-markdown>
 <script type="text/template">
