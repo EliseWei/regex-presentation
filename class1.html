@@ -52,12 +52,18 @@
 				<section>
                     <p>wifi: PromptWorks-Guest</p>
                     <p>password: handcrafted</p>
+                    <h4><br />Early?</h4>
+                    <ul>
+                        <li><a href="exercises.zip">Download the exercise files</a></li>
+                        <li><a href="#/18/1">Set up a local dev server</a></li>
+                        <li><a href="#/3">Sign up for Slack</a></li>
+                    </ul>
                 </section>
                 <section>
 					<h1>Intermediate JavaScript</h1>
 					<h3>Girl Develop It Philly</h3>
 					<p><a href="http://gdiphilly.github.io/Intermediate-JS" target="_blank">http://gdiphilly.github.io/Intermediate-JS</a></p>
-                    <p><a href="">exercise files</a></p>
+                    <p><a href="exercises.zip">exercise files</a></p>
 				</section>
                 <section>
                     <h3>Welcome!</h3>
@@ -71,6 +77,13 @@
                             <li>Help each other</li>
                             <li>Have fun</li>
                         </ul>
+                    </div>
+                </section>
+                <section>
+                    <h3>GDI Philly is now on Slack!</h3>
+                    <div class="left-align">
+                        <p>Slack is a free, chat and messaging system available as either a web or native application for your desktop or mobile device. All our welcome to join our Slack team, but we need to add you! For an invitation, <a href="http://goo.gl/forms/Qk1hqLxXtU" target="_blank">sign up here</a>.</p>
+                        <h4><br />Join #frontend-classes to slack about this class!</h4>
                     </div>
                 </section>
                 <section>
@@ -102,7 +115,7 @@
                     <pre><code contenteditable class="javascript">
     myObject['error']
     myObject.arr
-              </code></pre>
+                    </code></pre>
                 </section>
                 <section>
                     <h3>Data types review</h3>
@@ -116,7 +129,7 @@
                 <section>
                     <h3>Open the console</h3>
                     <ul>
-                        <li>Chome: CMD + OPT + J <em>or</em><br />View &gt; Developer &gt; JavaScript Console</li>
+                        <li>Chome: CMD + OPT + J <em>or</em><br />View &gt; Developer &gt; JavaScript Console<br />&nbsp;</li>
                         <li>Firefox: F12 to open Firebug <em>or</em><br />Tools &gt; Web Developer &gt; Firebug &gt; Open Firebug</li>
                     </ul>
                 </section>
@@ -181,6 +194,24 @@
                     <h3>Function expression vs declaration</h3>
                     <p><a href="https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/" target="_blank">JavaScript, JavaScript</a> by Angus Croll of "If Hemingway Wrote JavaScript"</p>
                 </section>
+                <section>
+                    <section>
+                        <h3>A quick word on working locally</h3>
+                        <p class="left-align">Much front-end development can be done in your local file system with no special setup.</p>
+                        <pre><code contenteditable class="html">file:///Users/yourname/git/...</code></pre>
+                        <p class="fragment left-align">However, we'll be using some advanced features of the browser that may, often for security reasons, only work on a "real" web page.</p>
+                        <p class="left-align fragment">We can use <a target="_blank" href="http://codepen.io/pen/?editors=0012">codepen.io</a> to get around that.</p>
+                    </section>
+                    <section>
+                        <h3>The real solution</h3>
+                        <p>Set up a local development server.</p>
+                        <p><a target="_blank" href="http://sweetme.at/2013/08/21/simple-local-http-server-with-python/">Easiest (Python, installed on Mac OSX)</a></p>
+                        <p><a target="_blank" href="https://technet.microsoft.com/en-us/library/cc732612(v=ws.10).aspx">Windows IIS</a></p>
+                        <p><a target="_blank" href="https://developer.mozilla.org/en-US/Learn/Common_questions/Set_up_a_basic_working_environment">Very detailed (Apache)</a></p>
+                        <p><a target="_blank" href="https://gist.github.com/willurd/5720255">Long list of simple-setup servers</a></p>
+                        <p class="left-align">Let's take no more than <em>10 minutes</em> to try and get this set up, but again, we can use codepen, so don't worry if you can't get a dev server up and running.</p>
+                    </section>
+                </section>
             <!-- Window native properties -->
 				<section>
                     <h3>Window</h3>
@@ -220,17 +251,26 @@
                     </section>
                     <section>
                         <h3>Long explanation</h3>
-                        <p class="left-align">If you visit the reference librarian and ask for help finding something, it could take a while. They might ask, "When I find the information, what should I do with it?"</p>
+                        <p class="left-align">If you visit the reference librarian and ask for help finding some information, it could take a while. They might ask, "When I find the information, what should I do with it?"</p>
                         <p class="left-align fragment">You might ask them to print it out and mail it to your house, or call you to come pick it up. You might ask them to email it to you, or just send you instructions on how to find it again for yourself.</p>
                         <p class="left-align fragment"><br />A callback function is the answer to the question "What should I do when your answer is ready?"</p>
                     </section>
                 </section>
                 <section>
-                    <h3>Some native features don't work on local files</h3>
-                    <p>...like geolocation. <a href="https://jsbin.com/?console" target="_blank">Open a jsbin console</a>.</p>
+                    <h3>Let's Develop It!</h3>
+                    <ol>
+                        <li>In index.html, switch from using debugging.js to script.js</li>
+                        <li>In your browser, refresh and make sure you have a clear console</li>
+                        <li>Open script.js in your text editor</li>
+                    </ol>
                 </section>
                 <section>
-                    <h3>getCurrentPosition</h3>
+                    <p>If you didn't get a server running, now is the time to <a href="http://codepen.io/pen/?editors=0012" target="_blank">open a codepen console</a>.</p>
+                </section>
+
+                <section>
+                    <h3>Let's Develop It!</h3>
+                    <p>In script.js (or in codepen), try the following.</p>
                     <pre><code contenteditable class="javascript">
     navigator.geolocation.getCurrentPosition(
         function(data) {
@@ -244,7 +284,7 @@
                     <h3>getCurrentPosition</h3>
                     <p>Two things will likely happen...</p>
                     <ol>
-                        <li>The browser will ask if you’d like to allow the page to know your location (yes)</li>
+                        <li>The browser will ask if you'd like to allow the page to know your location (yes)</li>
                         <li>It may take a moment (or a long moment) for a result to show in the console</li>
                     </ol>
                 </section>
@@ -254,35 +294,586 @@
                     <pre class="fragment"><code contenteditable class="javascript">
     data.coords.latitude
     data.coords.longitude
-              </code></pre>
+                    </code></pre>
                 </section>
                 <section>
                     <h3>Refactor</h3>
-                    <pre><code contenteditable class="javascript">var lat, lon;
-var onGeoComplete = function(geoloc) {
-    if (geoloc &amp;&amp; geoloc.coords) {
-        lat = geoloc.coords.latitude;
-        lon = geoloc.coords.longitude;
-        console.log('lat: ' + lat + ', lon: ' + lon);
-    } else {
-        console.log('no geo coordinates');
-    }
-}
-navigator.geolocation.getCurrentPosition(onGeoComplete);</code></pre>
+                    <p>Now that we know what the data looks like...</p>
+                    <pre><code contenteditable class="javascript">
+    var onGeoComplete = function(geoloc) {
+        if (geoloc &amp;&amp; geoloc.coords) {
+            var lat = geoloc.coords.latitude;
+            var lon = geoloc.coords.longitude;
+            console.log('lat: ' + lat + ', lon: ' + lon);
+        } else {
+            console.log('no geo coordinates');
+        }
+    };
+    navigator.geolocation.getCurrentPosition(onGeoComplete);
+                    </code></pre>
                 </section>
-
-			<!-- Examples of code slides-->
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>Javascript</p>
-					  <pre><code contenteditable class="javascript">
-                function helloWorld(){
-                  var name = 'GDI';
-                  alert("Hi, " + name)
-                }
-              </code></pre>
-				</section>
-
+                <section>
+                    <h2>Stretch break!</h2>
+                    <img src="img/cat_stretch.jpg" alt="kitty!" />
+                </section>
+            <!-- AJAX -->
+                <section>
+                    <h3>AJAX:<br />Asynchronous&nbsp;JavaScript And&nbsp;XML</h3>
+                    <p class="left-align">Normally, the rendering of a web page is a relatively sequential process. File top to bottom.</p>
+                    <p class="left-align fragment">With AJAX, we use javascript to request additional data outside the normal page-load process, often long after the initial load is complete.</p>
+                </section>
+                <section>
+                    <h3>AJAX: Where is it used?</h3>
+                    <ul>
+                        <li>New messages in your feed</li>
+                        <li>"Infinite" scroll</li>
+                        <li>Product quickview</li>
+                        <li>Auto-complete or auto-suggested results</li>
+                        <li>Requests to APIs</li>
+                        <li>Multi-page forms, loading search results, and anywhere a large or dynamically-generated set of new information appears without a page load</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Synchronous vs Asynchronous</h3>
+                    <div class="left" style="width: 47%; margin-right: 6%;">
+                        <strong class="red">Synchronous</strong>
+                        <ul>
+                            <li>tasks occur strictly in sequence</li>
+                            <li>easy to understand, predict, manage</li>
+                            <li>only possible with simple scripts</li>
+                            <li>sometimes referred to as "blocking"</li>
+                        </ul>
+                    </div>
+                    <div class="right" style="width: 47%;">
+                        <strong class="red">Asynchronous</strong>
+                        <ul>
+                            <li>order of tasks may have gaps in it</li>
+                            <li>multiple processes can be interleaved</li>
+                            <li>can result in "race conditions"</li>
+                            <li>callbacks and timeouts are good indicators</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h3>What do these gaps look like?</h3>
+                    <p class="left-align">When you submit a purchase and the page tells you not to refresh or hit the back button. Then it takes you to the confirmation page.</p>
+                </section>
+                <section>
+                    <h3>XML: Extensible Markup Language</h3>
+                    <p class="left-align">XML is a markup language and file format used to store and transmit data. It is extremely flexible: HTML is a subset of XML.</p>
+                    <img src="img/xml.png" alt="sample of XML" />
+                </section>
+                <section>
+                    <h3>AJAX and XML</h3>
+                    <p class="left-align">AJAX was originally developed for use with XML, but you can use it to request many different things. Most often JSON or HTML.</p>
+                </section>
+                <section>
+                    <h3>JSON: JavaScript Object Notation</h3>
+                    <p class="left-align">JSON is a newer, popular file format for storing and transmitting data. It looks like and translates easily into JS objects! It requires less markup than XML, and has a less formal feel.</p>
+                    <img src="img/json.png" alt="sample of JSON" />
+                </section>
+                <section>
+                    <h3>Let's Develop It!</h3>
+                    <pre><code contenteditable class="javascript">
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://jsonplaceholder.typicode.com/users/2/');
+                    </code></pre>
+                    <ol>
+                        <li>create the request object</li>
+                        <li>set some details of the request, like the type of request (GET) and the url to ask for</li>
+                    </ol>
+                    <pre><code contenteditable class="javascript">
+    xhr.send(null);
+                    </code></pre>
+                    <ol start="3" style="width: 100%">
+                        <li>send the request</li>
+                    </ol>
+                    <p class="fragment"><br />Check your "Resources" panel to see if it worked.</p>
+                </section>
+                <section>
+                    <h2>Wooo!</h2>
+                    <img src="img/woo_cat.jpg" alt="kitty!" />
+                </section>
+                <section>
+                    <h3>Handling the response</h3>
+                    <p>We know we're getting data back! Now what?</p>
+                    <pre><code contenteditable class="javascript">
+    xhr.onreadystatechange = function () {
+        var DONE = 4; // readyState 4 means the request is done.
+        var OK = 200; // status 200 is a successful return.
+        if (xhr.readyState === DONE) {
+            if (xhr.status === OK) {
+                // Soon, we'll replace this with a callback!
+                console.log(xhr.responseText);
+            } else {
+                // An error occurred during the request.
+                console.log('Error: ' + xhr.status);
+            }
+        }
+    };
+    xhr.send(null);
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>AJAX Concerns</h3>
+                    <p>AJAX is great for all the things we've been discussing, but what are some possible risks?</p>
+                    <ul class="fragment">
+                        <li>security</li>
+                        <li>counterfeit</li>
+                        <li>phishing</li>
+                        <li>copyright violation</li>
+                        <li>etc.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>CORS: Cross-Origin Resource Sharing</h3>
+                    <p class="left-align">At the server-level, the admin can specify what types of requests to permit. Today, we're using APIs that allow CORS, but in other cases, you might need to use an alternate technique that relies on JSONP.</p>
+                    <p><a href="https://web-design-weekly.com/2014/08/18/ajax-without-jquery/" target="_blank">A pretty straightforward explanation</a></p>
+                </section>
+                <section>
+                    <h2>Break time!</h2>
+                </section>
+            <!-- jQuery -->
+                <section>
+                    <h3>This is not bad...</h3>
+                    <pre><code contenteditable class="javascript">
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://jsonplaceholder.typicode.com/users/2/');
+    xhr.send(null);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            } else {
+                console.log('Error: ' + xhr.status);
+            }
+        }
+    };
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>But what about this?</h3>
+                    <pre><code contenteditable class="javascript">
+    $.ajax({
+        url: 'http://jsonplaceholder.typicode.com/users/2/',
+    }).done(function(res) {
+            console.log(res);
+    }).fail(function(err) {
+            console.log('Error: ' + err.status);
+    });
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>jQuery</h2>
+                    <p class="left-align">A library of JS functions and features designed to make the life of a JS developer <em>much</em> easier, especially when it comes to accommodating differences between browsers.</p>
+                    <p class="left-align">jQuery is written in JavaScript, so anything done in jQuery can be done in JavaScript, it just might be a lot of work.</p>
+                    <p class="left-align">It is also just as difficult to use as "vanilla" or "raw" JS, if you don't understand the underlying process.</p>
+                </section>
+                <section>
+                    <h2>Compare</h2>
+                    <p class="left-align">Vanilla JS</p>
+                    <pre><code contenteditable class="javascript">
+    var content = document.getElementById('content');
+    var contentDivs = content.getElementsByTagName('div');
+    for (i = 0; i < contentDivs.length; i++) {
+        contentDivs[i].style.display = none;
+    }
+                    </code></pre>
+                    <p class="left-align">jQuery</p>
+                    <pre><code contenteditable class="javascript">
+    $('#content div').hide();
+                    </code></pre>
+                </section>
+                <section>
+                    <p>However, AJAX is one place jQuery really shines...</p>
+                </section>
+                <section>
+                    <h3>Vanilla JS</h3>
+                    <pre><code contenteditable class="javascript">
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://jsonplaceholder.typicode.com/users/2/');
+    xhr.send(null);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            } else {
+                console.log('Error: ' + xhr.status);
+            }
+        }
+    };
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>jQuery</h3>
+                    <pre><code contenteditable class="javascript">
+    $.ajax({
+        url: 'http://jsonplaceholder.typicode.com/users/2/',
+    }).done(function(res) {
+            console.log(res);
+    }).fail(function(err) {
+            console.log('Error: ' + err.status);
+    });
+                    </code></pre>
+                </section>
+                <section>
+                    <p>But that's a topic for another day.</p>
+                </section>
+            <!-- JSON -->
+                <section>
+                    <h3>Let's Develop It!</h3>
+                    <p class="left-align">Let's modify the success case in our AJAX request to call a function and pass in the response text.</p>
+                    <pre class="fragment"><code contenteditable class="javascript">
+    var onSuccess = function(response) {
+        console.log(response);
+    };
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                onSuccess(xhr.responseText);
+            } else {
+                console.log('Error: ' + xhr.status);
+            }
+        }
+    };
+                    </code></pre>
+                    <p class="fragment">Now try to log the name of the returned user.</p>
+                    <p class="fragment">Now try to log the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank">typeof</a> the result.</p>
+                </section>
+                <section>
+                    <h3>What's going on?</h3>
+                    <p class="fragment">It looks like an object, but it's actually a string.</p>
+                    <p class="fragment">This is one of the perks of JSON.</p>
+                </section>
+                <section>
+                    <h3>Objects as Strings</h3>
+                    <p class="left-align">Remeber that JSON is a kind of "object <em>notation</em>." It allows us to pass around objects as strings, which can then be converted back into objects.</p>
+                </section>
+                <section>
+                    <h3>Stringify &amp; Parse</h3>
+                    <p class="left-align"><code class="javascript">JSON.stringify()</code> allows us to convert objects into strings.</p>
+                    <p class="left-align"><code class="javascript">JSON.parse()</code> allows us to convert strings into objects.</p>
+                </section>
+                <section>
+                    <h3>Let's Develop It</h3>
+                    <p>Convert the response text into an object we can work with, and log the name of the returned user.</p>
+                    <pre class="fragment"><code contenteditable class="javascript">
+    var onSuccess = function(response) {
+        var responseObj = response &amp;&amp; JSON.parse(response);
+        console.log(responseObj &amp;&amp; responseObj.name);
+    };
+                    </code></pre>
+                </section>
+            <!-- Cookies -->
+                <section>
+                    <h2>Cookies</h2>
+                    <img src="img/fortune_cookie.jpg" alt="photo of fortune cookies. this is a joke." />
+                </section>
+                <section>
+                    <h3>Cookies</h3>
+                    <p class="left-align">Cookies are little bits of data stored by a website to a browser, that can usually only be accessed by that site. They are typically used to save the "state" of something across page loads or across visits. Some common uses:</p>
+                    <ul>
+                        <li>Save a user's logged-in state (Authentication)</li>
+                        <li>Save a user's shopping cart (sort of)</li>
+                        <li>Show the date of the user's last visit</li>
+                        <li>Save display preferences like list vs gallery view, sort order &amp; filters, etc.</li>
+                        <li>Save preferences like "Don't show this again"</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>More tasty tidbits</h3>
+                    <p class="left-align">The name "cookie" is loosely derived from "packets" or tiny chunks of information sent over a network and the fact that these packets contained messages to the software. Like a fortune cookie.</p>
+                    <p class="left-align fragment">Browsers will support at least 50 cookies per domain, and a maximum cookie length of 4096 bytes or more, depending on the browser.</p>
+                    <p class="fragment"><br />That's a lot of big cookies.</p>
+                </section>
+                <section>
+                    <h3>The recipe</h3>
+                    <p class="left-align">The cookie collection is represented by a string that is a property of the document object. You can see the full list of available cookies for a given domain by accessing <code>document.cookie</code></p>
+                    <p class="left-align">To set a cookie, provide:</p>
+                    <ul>
+                        <li>Name</li>
+                        <li>Value</li>
+                        <li>Expiration or Max Age (optional)</li>
+                        <li>Domain and/or Path (optional)</li>
+                        <li>Secure and/or HttpOnly (optional)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Name and Value</h3>
+                    <p class="left-align"><span class="red">Name</span> is a string.</p>
+                    <p class="left-align"><span class="red">Value</span> can be anything that can be stored as a string, for example numbers, strings, JSON, or functions.</p>
+                </section>
+                <section>
+                    <h3>Expiration or Max Age</h3>
+                    <p class="left-align">Used to specify how long the cookie should last. If not explicitly set, the cookie will be destroyed at the end of the user's session. User sessions can be months long!</p>
+                    <p class="left-align"><span class="red">Expiration</span> conveys a specific end date/time.</p>
+                    <p class="left-align"><span class="red">Max-age</span> specifies a number of seconds from the time the cookie is set. It does not have deep support in older browsers, so choose judiciously.</p>
+                </section>
+                <section>
+                    <h3>Domain and/or Path</h3>
+                    <p class="left-align">For performance, security, or user experience, you can limit the availability of a cookie, even within your own site.</p>
+                    <p class="left-align"><span class="red">Domain</span>: from a subdomain, specify that the cookie is available across the whole site. Or limit a cookie set at the top level domain to use on a certain subdomain. Defaults to the domain and subdomain where it is set.</p>
+                    <p class="left-align"><span class="red">Path</span>: similarly allows you to limit a cookie to certain directory folders. Defaults to the root <code>/</code> of the site (not limited).</p>
+                </section>
+                <section>
+                    <h3>Secure and/or HttpOnly</h3>
+                    <p class="left-align">Both default to false, and are set to true simply by adding the attributes to the cookie without a value.</p>
+                    <p class="left-align"><span class="red">Secure</span> specifies that the cookie should only be available on secure requests.</p>
+                    <p class="left-align"><span class="red">HttpOnly</span> specifies that the cookie should not be made available through any kind of requests other than http or https (for example, not available to javascript).</p>
+                </section>
+                <section>
+                    <h3>Cookie Syntax</h3>
+                    <p class="left-align">To set a cookie, you need at least...</p>
+                    <pre><code contenteditable class="javascript">
+    document.cookie = 'cookieName=cookieValue';
+                    </code></pre>
+                    <p class="left-align">Additional properties are set at the same time separated with semicolons, for example...</p>
+                    <pre><code contenteditable class="javascript">
+    document.cookie = 'cookieName=cookieValue;max-age=60;secure';
+                    </code></pre>
+                </section>
+                <section>
+                    <section>
+                        <h3>Let's Develop It</h3>
+                        <p class="left-align">Let's return to <code>onGeoComplete</code>. When the user's coordinates are returned, put them into an object, JSON encode the object, and set the JSON as the value of a cookie named "coords" that expires in 20 minutes.</p>
+                        <p><br /><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie" target="_blank">Cookie documentation</a></p>
+                    </section>
+                    <section>
+                        <pre><code contenteditable class="javascript">
+    var onGeoComplete = function(geoloc) {
+        if (geoloc &amp;&amp; geoloc.coords) {
+            var coordsObj = {
+                'latitude': geoloc.coords.latitude,
+                'longitude': geoloc.coords.longitude
+            };
+            var coordsJSON = JSON.stringify(coordsObj);
+            document.cookie = 'coords=' + coordsJSON + ';max-age=' + 60*20;
+            console.log('coords cookie set');
+        } else {
+            console.log('no geo coordinates');
+        }
+    };
+                        </code></pre>
+                        <p class="left-align">You can check it by getting <code>document.cookie</code> in the console.</p>
+                    </section>
+                    <section>
+                        <p class="left-align">Now, add a session cookie from your console by running</p>
+                        <pre><code class="javascript">
+    document.cookie = 'hi=mom';
+                        </code></pre>
+                        <p class="fragment left-align">Then check <code>document.cookie</code> again.</p>
+                    </section>
+                </section>
+                <section>
+                    <h3>Retrieving cookies</h3>
+                    <p class="left-align">Cookies aren't very useful unless we can get the values back out of them. Unfortunately, the browser doesn't allow us to pick them out by name, it will only return the entire set.</p>
+                    <p class="fragment">So what's a dev to do?</p>
+                </section>
+                <section>
+                    <h2>Stretch break!</h2>
+                </section>
+            <!-- Regular Expressions -->
+                <section>
+                    <h3>Regular Expressions</h3>
+                    <p>Allow us to match patterns (sometimes extremely complex) in strings.</p>
+                </section>
+                <section>
+                    <h3>What do you do with them?</h3>
+                    <p class="left-align">Given some text and a pattern, you can "split" "replace" "match" "search" "test" and "exec." But the <span class="red">how</span> is a bit quirky.</p>
+                </section>
+                <section>
+                    <h3>String methods that accept regexes</h3>
+                    <ul>
+                        <li><span class="red">split</span>: finds all instances of the pattern, deletes them, and uses those points to divide text into an array</li>
+                        <li><span class="red">replace</span>: Can be a simple replacement or can be more complex</li>
+                        <li><span class="red">match</span>: returns an array of all matching substrings</li>
+                        <li><span class="red">search</span>: returns the numerical index of the first matched pattern or -1 if not matched</li>
+                    </ul>
+                    <pre><code class="javascript">
+    var str = 'which way';
+    str.search(/hi/); // returns 1
+                        </code></pre>
+                </section>
+                <section>
+                    <h3>Regex methods that accept strings</h3>
+                    <ul>
+                        <li><span class="red">test</span>: returns true if the pattern is found, otherwise, false</li>
+                        <li><span class="red">exec</span>: returns only the first matched string and captured substring if applicable (this is different from "match" if using the global modifier. More on that later.)</li>
+                    </ul>
+                    <pre><code class="javascript">
+    var pattern = /hi/;
+    pattern.test('chocolate chip'); // returns true
+                        </code></pre>
+                </section>
+                <section>
+                    <h3>JS is like...</h3>
+                    <img src="http://inthemixxshow.com/wp-content/uploads/2014/02/plaza-gif.gif" alt="" />
+                </section>
+                <section>
+                    <h3>And the devs are like...</h3>
+                    <img src="https://lh3.googleusercontent.com/-yjYjiYXdCGA/VcCwd-2cu1I/AAAAAAAAUHs/B4Ms00N0eUI/w500-h281/tswift_awkhands.gif" alt="" />
+                </section>
+                <section>
+                    <p>Regexes are VERY POWERFUL, but difficult to use.</p>
+                    <blockquote class="fragment">Some people, when confronted with a problem, think "I know, I'll use regular expressions." Now they have two problems. &mdash;Jamie Zawinski</blockquote>
+                </section>
+                <section>
+                    <h3>So really, what do you do with them?</h3>
+                    <p class="left-align">Fun/silly stuff:</p>
+                    <ul style="width: 100%">
+                        <li><a href="https://chrome.google.com/webstore/detail/millennials-to-snake-peop/jhkibealmjkbkafogihpeidfcgnigmlf?hl=en-US" target="_blank">Snake People</a></li>
+                        <li><a href="https://chrome.google.com/webstore/detail/drumpfinator/hcimhbfpiofdihhdnofbdlhjcmjopilp" target="_blank">Drumpfinator</a></li>
+                    </ul>
+                    <p class="left-align"><br />Real uses</p>
+                    <ul>
+                        <li>making sure emails are valid</li>
+                        <li>passwords have the right kinds of numbers and symbols</li>
+                        <li>automatically suggesting search terms or tags for a new blog post</li>
+                        <li>and many more</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <p>For the following examples, you can use <a href="https://regex101.com/#javascript" target="_blank">regex101</a> to easily experiment.</p>
+                    </section>
+                    <section>
+                        <h3>The basics of writing a regular expression</h3>
+                        <pre><code class="javascript">
+    'Hello, class'
+                        </code></pre>
+                        <ul>
+                            <li>Start and end with forward slashes <code>/a/</code>, or instantiate with <code>new RegExp('a')</code>. Either would match the first lowercase "a"</li>
+                            <li>Can be used to find an exact string, such as <code>/Hello/</code></li>
+                            <li>Can look for specific character sets at the beginning and end of lines using <code>^</code> and <code>$</code> (which you may recognize from some CSS uses) <code>/^class/</code> would not find a match, but <code>/class$/</code> would</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Escaping &amp; character ranges</h3>
+                        <pre><code class="javascript">
+    '$50.00'
+                        </code></pre>
+                        <div class="code-list">
+                            <p><code>/\$/</code>We've already seen that the dollar sign has special meaning in a regular expression, so what if we're actually looking for a dollar sign character? Use a backslash</p>
+                            <p><code>[0123456789]</code>You can also match any of a group of characters by using square brackets</p>
+                            <p><code>[0-9]</code>But you can also signify any of a range of characters by using a hyphen</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Escaping &amp; character ranges</h3>
+                        <div class="code-list">
+                            <p><code >[0-9a-z]</code>Or multiple ranges.<br />
+                            This signifies a range of <a href="http://unicode-table.com/en/#basic-latin" target="_blank">unicode characters</a>, by number.</p>
+                            <p class="fragment red">What's the difference between [A-z] and [A-Za-z]?</p>
+                            <p class="fragment"><code>[^13579]</code>You can also use a carat to exclude characters in a range. This example would match only even digits</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Wildcards</h3>
+                        <p class="left-align">There are also some special wildcards that you can use to find pre-defined character sets:</p>
+                        <div class="left-align">
+                            <p><code>.</code>A period matches any character. Escape with a backslash to match an actual period.</p>
+                            <p><code>\s</code> for whitespace (<code>\S</code> for non-whitespace) Whitespace: spaces, tabs, new lines, CRs, etc</p>
+                            <p><code>\d</code> for digits (<code>\D</code> for non-digits)</p>
+                            <p><code>\w</code> for "word" characters, which includes letters, digits, and the underscore (<code>\W</code> for non-word)</p>
+                            <p><code>\b</code> for the beginnings or ends of words (<code>\B</code> for everything else)</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Modifiers</h3>
+                        <p class="left-align">Add modifiers added after the final slash to signify global, case-insensitive, and mult-line searches that will match the start and end of a line as if it were the start or end of a string (g, i, m). There are a couple other modifiers for unicode and 'stickiness,' but I've never seen them used.</p>
+                    </section>
+                    <section>
+                        <h3>Modifiers</h3>
+                        <pre><code class="javascript" contenteditable>
+    'Hello, class.
+    How was your week?'
+                        </code></pre>
+                        <div class="left-align">
+                            <p><code>/h/</code> would have no matches.</p>
+                            <p><code>/h/i</code> would match the first "H"</p>
+                            <p><code>/h/ig</code> would match all instances of "H". This is useful for "match" and "replace" functions. "split" is global by default, and "test" and "search" are not affected by a global modifier.</p>
+                            <p><code>/^h/ig</code> would match only the first "H", while <code>/^h/igm</code> would match both.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Capturing groups</h3>
+                        <p class="left-align">Sometimes we'll want to look for a pattern, but only use part of it. Parentheses indicate a part of the pattern you would specifically like the search to "capture" and return.</p>
+                        <pre><code class="javascript" contenteditable>
+    "ace".match(/a(c)e/); // returns ["ace", "c"]
+                        </code></pre>
+                        <p class="left-align">The whole pattern is matched, and the next element of the returned array is the specifically "captured" group of matched characters.</p>
+                    </section>
+                    <section>
+                        <h3>Capturing groups</h3>
+                        <p class="left-align">Now combine that with the character range syntax <code>/a([a-z])e/</code></p>
+                        <pre><code class="javascript" contenteditable>
+    var pattern = /a([a-z])e/;
+    "age".match(pattern); // returns ["age", "g"]
+    "ale".match(pattern); // returns ["ale", "l"]
+    "variegated".match(pattern); // returns ["ate", "t"]
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Are you beginning to see the awesome power?</h3>
+                        <img src="https://adprice.fedorapeople.org/img/omg_cat.jpg" alt="mind. blown." />
+                    </section>
+                    <section>
+                        <h3>Quantifiers</h3>
+                        <div class="left-align">
+                            <p>You can also specify different numbers of characters to allow in the match.</p>
+                            <p><code>+</code> Allows for any (non-zero) number of the preceding character or expression to qualify for the match.</p>
+                            <p><code>*</code> Looks for zero or more of the preceding character or expression</p>
+                            <p><code>?</code> Matches exactly 0 or 1 of something</p>
+                            <p><code>{3} {1,3}</code> Match a specific quantity, or a specific quantity range.</p>
+                    </section>
+                    <section>
+                        <h3>Quantifiers</h3>
+                        <p>This looks like...</p>
+                        <pre><code class="javascript" contenteditable>
+    "variegated".match(/a([a-z]+)e/); // returns ["ariegate", "riegat"]
+                        </code></pre>
+                        <p>(This might not be what you expected. Watch out for "greediness!" use <code>+?</code>, <code>*?</code> or <code>{}?</code> to create a "reluctant", rather than greedy search)</p>
+                        <pre><code class="javascript" contenteditable>
+    "variegated".match(/a([a-z]+?)e/); // returns ["arie", "ri"]
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <h3>Let's Develop It!</h3>
+                    <p>For now, let's retrieve our cookie and extract the <code>coords</code> cookie value with a regular expression.</p>
+                    <pre><code class="javascript" contenteditable>
+    var getCookie = function(name) {
+        var re = new RegExp(name + "=([^;]+)");
+        var value = re.exec(document.cookie);
+        return value &amp;&amp; value[1] || '';
+    }
+                    </code></pre>
+                    <p class="left-align">Then use JSON.parse() to transform it from a string back into an object.</p>
+                    <pre><code class="javascript" contenteditable>
+    var savedCoords = JSON.parse(getCookie('coords'));
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Summary</h3>
+                    <ul>
+                        <li>Debugging</li>
+                        <li>Native window properties (geolocation)</li>
+                        <li>Callbacks, sync, and async</li>
+                        <li>AJAX and JSON</li>
+                        <li>Preview of jQuery</li>
+                        <li>Cookies</li>
+                        <li>Regular Expressions</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Homework (optional)</h3>
+                    <ol>
+                        <li>Only get the user's geolocation info if it's not currently stored in a cookie</li>
+                        <li>Given <a href="https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=df2d47c3f88a5d9012fbb764a015c0c4&per_page=10&format=json&nojsoncallback=1&lat=48&lon=-70" target="_blank">this URL to call Flickr's API</a>, replace the <code>lat</code> and <code>lon</code> values with the user's actual coordinates. Use the URL to make an AJAX request.</li>
+                        <li>Use the response info and <a href="https://www.flickr.com/services/api/misc.urls.html" target="_blank">these rules for turning photo data into urls</a> to display the resulting photos on the page.</li>
+                    </ol>
+                    <p><br />Don't feel you need to finish this tonight! Check into #frontend-classes for follow-up and questions.</p>
+                </section>
 			</div>
   		<footer>
         <div class="copyright">

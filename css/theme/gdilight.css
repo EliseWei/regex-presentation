@@ -195,3 +195,12 @@ body {
 .reveal section img {
   border: none;
 }
+
+.code-list p {
+  text-align: left;
+}
+.code-list code {
+   display: block;
+   text-indent: -1em;
+}
+
