@@ -221,7 +221,7 @@ function PetProduct() {
     this.category = 'Cats';
 }
 
-var kittenProduct = new PetProduct();
+var kittenProduct = new PetProduct(); // instantiate new object based on prototype
 
 // kittenProduct can access properties we defined in PetProduct
 console.log(kittenProduct.category);    // 'Cats'
@@ -329,24 +329,12 @@ Beginning with this [CodePen template](http://codepen.io/cfarm/pen/grxYqv?editor
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Warm up exercise
-
-                        ### Goal: Understanding for loops and counters
-                        
-                        1. Create an array of `products` using the [Codepen](http://codepen.io/pen/) website.
-                        1. Use a `for loop` to instantiate a new Product object using properties from each item in the `products` list
-
-                    </script>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Extending the prototype with new objects
+                        ## Prototype from a prototype
 
 ```javascript
 // The constructor function
 function PetClothing(name, category, price, size) {
-    PetProduct.call(this, name, category, price);
+    PetProduct.call(this, name, category, price); // inherit properties from PetProduct constructor
     this.size = size;
 }
 // Extending the PetProduct object
@@ -358,7 +346,7 @@ var doggySweater = new PetClothing('Doggy sweater', 'dog clothings', 30, 'medium
 
 Because it inherits from PetProduct, PetClothing has the properties and methods available to PetProduct as well.
 
-
+[Read explanation of JavaScript prototype chain](http://wildlyinaccurate.com/understanding-javascript-inheritance-and-the-prototype-chain/)
                     </script>
 
                 </section>
@@ -368,7 +356,7 @@ Because it inherits from PetProduct, PetClothing has the properties and methods 
                         #### Exercise 2
                         ## Extending the prototype
 
-Beginning with this [Codepen template](), make the following changes:
+Beginning with your Codepen from Exercise 1, (or this [Codepen template](http://codepen.io/cfarm/pen/jqGdxZ?editors=0010), make the following changes:
 
 1. Create a new object called `PetProduct` that extends `Product`. Its constructor should also take in an `inventory` argument.
 2. Instantiate a new `PetProduct` object and call the `addToCart()` method on it.
@@ -383,10 +371,10 @@ Beginning with this [Codepen template](), make the following changes:
                         ## Extending the prototype
                         
                         1. Bonus: Use an array of data and a for loop to instantiate 5 `PetProduct` objects.
-                        1. Bonus: Make an array of product data with pet products and people products, loop through them, and decide on each one whether to make it a `Product` or `PetProduct` object.
+                        1. Bonus: Make an array of product data with cat products and dog products, loop through them, and decide on each one which `category` property it will have.
                     
 
-[View the solution](http://codepen.io/cfarm/pen/WwOKGq?editors=0010)
+[View the solution](http://codepen.io/cfarm/pen/oxGWwv?editors=0011)
                     </script>
                 </section>
 
