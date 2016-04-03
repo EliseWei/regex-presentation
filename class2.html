@@ -791,23 +791,11 @@ $( "#credit-card-form" ).validate({
 
 <section id="modules" data-markdown>
 <script type="text/template">
-## Modules
-
-[Download exercise files]()
-
-ECMAScript 2015 ("ES6") adds modules as a native feature to JavaScript, meaning we can organize our code into separate script files and the browser will automatically run them in the order we need.
-
-</script>
-</section>
-
-<section data-markdown>
-<script type="text/template">
-## Code organization 
+## Code organization with modules
 
 You have some JavaScript...
 
 It's getting pretty long! If we want to find and update the displayOnWebsite() method then we're scrolling through lots of other code to do so. 
-
 
 </script>
 </section>
@@ -816,10 +804,10 @@ It's getting pretty long! If we want to find and update the displayOnWebsite() m
 <script type="text/template">
 If we could split this file up by feature it'd be a lot easier to update and maintain:
 
-* product.js
-* petProduct.js
-* catFood.js
-* doggySweater.js
+* `product.js`
+* `petProduct.js`
+* `catFood.js`
+* `doggySweater.js`
 
 </script>
 </section>
@@ -835,6 +823,11 @@ but then we'd have to load 3 separate files in our index.html:
 <script src="doggySweater.js"></script>
 ```
 
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
 What's wrong with this? 
 
 <ul>
