@@ -36,7 +36,7 @@
 		<!-- If use the PDF print sheet so students can print slides-->
 		
 		<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -50,19 +50,296 @@
 			<div class="slides">
         <!-- Opening -->
                 <section>
-					<h2>Intermediate JavaScript</h2>
-                    <p><a href="class1.html">Class 1</a></p>
-                    <p><a href="class2.html">Class 2</a></p>
-				</section>
+                    <h2>Fun with Regular Expressions</h2>
+                    <h3>(no, really)</h3>
+                </section>
+                <section>
+                    <p>Based on...</p>
+                    <h2>Intermediate JavaScript</h2>
+                    <h3>Girl Develop It Philly</h3>
+                    <p><a href="http://gdiphilly.github.io/Intermediate-JS" target="_blank">http://gdiphilly.github.io/Intermediate-JS</a></p>
+                </section>
+                <section>
+                    <h3>This talk...</h3>
+                    <ul>
+                        <li>is fairly beginner friendly</li>
+                        <li>may help you find a new appreciation for something you don't like much</li>
+                        <li>welcomes questions!</li>
+                        <li>is available at <a href="http://github.com/EliseWei/regex-presentation" target="_blank">github.com/EliseWei/regex-presentation</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Elise Wei</h3>
+                    <img src="img/elise_profile_Aug2016.jpg" alt="Photo of Elise" class="left" style="max-width: 30%" />
+                    <ul class="right" style="max-width: 65%; margin-top: 1em;">
+                        <li>Drexel grad</li>
+                        <li>Self-taught (2002-present)</li>
+                        <li>Full-time dev (2008-present)</li>
+                        <li>Girl Develop It (2012-present)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Elise Wei</h3>
+                    <p>Software Engineer at Ticketleap, working on <a href="http://sellwithport.com/" target="_blank">Port</a> (currently in beta).</p>
+                </section>
+                <section>
+                    <p>
+                        <strong>Monetate</strong>: 3rd party script that allows marketers to personalize/customize their e-commerce sites and measure the impact.
+                    </p>
+                    <h3 class="fragment">
+                        Scraping!
+                    </h3>
+                </section>
+                
+                <!-- Regular Expressions -->
+                <section>
+                    <h3>Regular Expressions</h3>
+                    <p>Allow us to match patterns (sometimes extremely complex) in strings.</p>
+                </section>
+                <section>
+                    <h3>What do you do with them?</h3>
+                    <p class="left-align">Given some text and a pattern, you can "split" "replace" "match" "search" "test" and "exec." But the <span class="red">how</span> is a bit quirky.</p>
+                </section>
+                <section>
+                    <h3>String methods that accept regexes</h3>
+                    <ul>
+                        <li><span class="red">split</span>: finds all instances of the pattern, deletes them, and uses those points to divide text into an array</li>
+                        <li><span class="red">replace</span>: Can be a simple replacement or can be more complex</li>
+                        <li><span class="red">match</span>: returns an array of all matching substrings</li>
+                        <li><span class="red">search</span>: returns the numerical index of the first matched pattern or -1 if not matched</li>
+                    </ul>
+                    <pre><code class="javascript">
+    var str = 'which way';
+    str.search(/hi/); // returns 1
+                        </code></pre>
+                </section>
+                <section>
+                    <h3>Regex methods that accept strings</h3>
+                    <ul>
+                        <li><span class="red">test</span>: returns true if the pattern is found, otherwise, false</li>
+                        <li><span class="red">exec</span>: returns only the first matched string and captured substring if applicable (this is different from "match" if using the global modifier. More on that later.)</li>
+                    </ul>
+                    <pre><code class="javascript">
+    var pattern = /hi/;
+    pattern.test('chocolate chip'); // returns true
+                        </code></pre>
+                </section>
+                <section>
+                    <h3>JS is like...</h3>
+                    <img src="http://inthemixxshow.com/wp-content/uploads/2014/02/plaza-gif.gif" alt="" />
+                </section>
+                <section>
+                    <h3>And the devs are like...</h3>
+                    <img src="https://lh3.googleusercontent.com/-yjYjiYXdCGA/VcCwd-2cu1I/AAAAAAAAUHs/B4Ms00N0eUI/w500-h281/tswift_awkhands.gif" alt="" />
+                </section>
+                <section>
+                    <p>Regexes are VERY POWERFUL, but can be difficult to use.</p>
+                    <blockquote class="fragment">Some people, when confronted with a problem, think "I know, I'll use regular expressions." Now they have two problems. &mdash;Jamie Zawinski</blockquote>
+                </section>
+                <section>
+                    <h3>So really, what do you do with them?</h3>
+                    <p class="left-align">Fun/silly stuff:</p>
+                    <ul style="width: 100%">
+                        <li><a href="https://chrome.google.com/webstore/detail/millennials-to-snake-peop/jhkibealmjkbkafogihpeidfcgnigmlf?hl=en-US" target="_blank">Snake People</a></li>
+                        <li><a href="https://chrome.google.com/webstore/detail/drumpfinator/hcimhbfpiofdihhdnofbdlhjcmjopilp" target="_blank">Drumpfinator</a></li>
+                    </ul>
+                    <p class="left-align"><br />Real uses:</p>
+                    <ul>
+                        <li>sanitizing and validating user-entered data</li>
+                        <li>automatically suggesting search terms or tags for a new blog post</li>
+                        <li>templating with strings (text replacement)</li>
+                        <li>getting data out of a url</li>
+                        <li>and many more</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>For the following examples, you can use <a href="https://regex101.com/#javascript" target="_blank">regex101</a> to easily experiment.</p>
+                </section>
+                <section>
+                    <h3>The basics of writing a regular expression</h3>
+                    <pre><code class="javascript">
+    'Hello, class'
+                    </code></pre>
+                    <ul>
+                        <li>Start and end with forward slashes <code>/a/</code>, or instantiate with <code>new RegExp('a')</code>. Either would match the first lowercase "a"</li>
+                        <li>Can be used to find an exact string, such as <code>/Hello/</code></li>
+                        <li>Can look for specific character sets at the beginning and end of lines using <code>^</code> and <code>$</code> (which you may recognize from some CSS uses) <code>/^class/</code> would not find a match, but <code>/class$/</code> would</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Escaping &amp; character ranges</h3>
+                    <pre><code class="javascript">
+    '$50.00'
+                    </code></pre>
+                    <div class="code-list left-align">
+                        <p><code>/\$/</code>We've already seen that the dollar sign has special meaning in a regular expression, so what if we're actually looking for a dollar sign character? Use a backslash</p>
+                        <p><code>[0123456789]</code>You can also match any of a group of characters by using square brackets</p>
+                        <p><code>[0-9]</code>But you can also signify any of a range of characters by using a hyphen</p>
+                    </div>
+                </section>
+                <section>
+                    <h3>Escaping &amp; character ranges</h3>
+                    <div class="code-list left-align">
+                        <p><code>[0-9a-z]</code>Or multiple ranges.<br />
+                        This signifies a range of <a href="http://unicode-table.com/en/#basic-latin" target="_blank">unicode characters</a>, by number.</p>
+                        <p class="fragment red">What's the difference between [A-z] and [A-Za-z]?</p>
+                        <p class="fragment"><code>[^13579]</code>You can also use a carat to exclude characters in a range. This example would match only even digits</p>
+                    </div>
+                </section>
+                <section>
+                    <h3>One of...</h3>
+                    <div class="code-list left-align">
+                        <p><code>x|y|z</code>Any of the pipe-separated options<br />
+                        Here, there is no difference from [xyz], but it becomes more useful when using longer expressions, for example x1|y2|z3.</p>
+                    </div>
+                </section>
+                <section>
+                    <h3>Wildcards</h3>
+                    <p class="left-align">There are also some special wildcards that you can use to find pre-defined character sets:</p>
+                    <div class="left-align">
+                        <p><code>.</code>A period matches any character. Escape with a backslash to match an actual period.</p>
+                        <p><code>\s</code> for whitespace (<code>\S</code> for non-whitespace) Whitespace: spaces, tabs, new lines, CRs, etc</p>
+                        <p><code>\d</code> for digits (<code>\D</code> for non-digits)</p>
+                        <p><code>\w</code> for "word" characters, which includes letters, digits, and the underscore (<code>\W</code> for non-word)</p>
+                        <p><code>\b</code> for the beginnings or ends of words (<code>\B</code> for everything else)</p>
+                    </div>
+                </section>
+                <section>
+                    <h3>Modifiers</h3>
+                    <p class="left-align">Modifiers added after the final slash signify global, case-insensitive, and multi-line searches that will match the start and end of a line as if it were the start or end of a string (g, i, m). There are a couple other modifiers for unicode and 'stickiness,' but they're not used often.</p>
+                </section>
+                <section>
+                    <h3>Modifiers</h3>
+                    <pre><code class="javascript" contenteditable>
+    'Hello, class.
+    How was your week?'
+                    </code></pre>
+                    <div class="left-align">
+                        <p><code>/h/</code> would have no matches.</p>
+                        <p><code>/h/i</code> would match the first "H"</p>
+                        <p><code>/h/ig</code> would match all instances of "H". This is useful for "match" and "replace" functions. "split" is global by default, and "test" and "search" are not affected by a global modifier.</p>
+                        <p><code>/^h/ig</code> would match only the first "H", while <code>/^h/igm</code> would match both.</p>
+                    </div>
+                </section>
+                <section>
+                    <h3>Capturing groups</h3>
+                    <p class="left-align">Sometimes we'll want to look for a pattern, but only use part of it. Parentheses indicate a part of the pattern you would specifically like the search to "capture" and return.</p>
+                    <pre><code class="javascript" contenteditable>
+    "ace".match(/a(c)e/); // returns ["ace", "c"]
+                    </code></pre>
+                    <p class="left-align">The whole pattern is matched, and the next element of the returned array is the specifically "captured" group of matched characters.</p>
+                </section>
+                <section>
+                    <h3>Capturing groups</h3>
+                    <p class="left-align">Now combine that with the character range syntax <code>/a([a-z])e/</code></p>
+                    <pre><code class="javascript" contenteditable>
+    var pattern = /a([a-z])e/;
+    "age".match(pattern); // returns ["age", "g"]
+    "ale".match(pattern); // returns ["ale", "l"]
+    "variegated".match(pattern); // returns ["ate", "t"]
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Are you beginning to see the awesome power?</h3>
+                    <img src="https://adprice.fedorapeople.org/img/omg_cat.jpg" alt="mind. blown." />
+                </section>
+                <section>
+                    <h3>Quantifiers</h3>
+                    <div class="left-align">
+                        <p>You can also specify different numbers of characters to allow in the match.</p>
+                        <p><code>+</code> Allows for any (non-zero) number of the preceding character or expression to qualify for the match.</p>
+                        <p><code>*</code> Looks for zero or more of the preceding character or expression</p>
+                        <p><code>?</code> Matches exactly 0 or 1 of something</p>
+                        <p><code>{3} {1,3}</code> Match a specific quantity, or a specific quantity range.</p>
+                </section>
+                <section>
+                    <h3>Quantifiers</h3>
+                    <p>This looks like...</p>
+                    <pre><code class="javascript" contenteditable>
+    "variegated".match(/a([a-z]+)e/); // returns ["ariegate", "riegat"]
+                    </code></pre>
+                    <p>(This might not be what you expected. Watch out for "greediness!" use <code>+?</code>, <code>*?</code> or <code>{}?</code> to create a "reluctant", rather than greedy search)</p>
+                    <pre><code class="javascript" contenteditable>
+    "variegated".match(/a([a-z]+?)e/); // returns ["arie", "ri"]
+                    </code></pre>
+                </section>
+                <section>
+                    <section>
+                        <h2>Bonus</h2>
+                        <ul>
+                            <li>parens (and non-capturing)</li>
+                            <li>deciphering regex</li>
+                            <li>look-ahead</li>
+                            <li>multi-part search/replace</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Parentheses can...</h3>
+                        <ul>
+                            <li>Create a capturing group</li>
+                            <li>Apply modifiers to a group of characters</li>
+                            <li>Group multi-character options</li>
+                        </ul>
+                        <pre><code class="javascript" contenteditable>
+    /a([a-z])e/ // matches ace, ate, ale and returns the middle letter
+    /a(pa)?ce/ // matches ace or apace and returns "pa" or ""
+    /a(cr|bl)e/ // matches acre or able and returns "cr" or "bl"
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Non-capturing parens</h3>
+                        <p class="left-align">
+                            In cases 2 and 3, if you want parentheses for grouping, but don't need the result, use <code>?:</code> inside the parens to indicate a non-capturing group.
+                        </p>
+                        <pre><code class="javascript" contenteditable>
+    /a(?:[a-z])e/ // this is the same as leaving out the parens entirely
+    /a(?:pa)?ce/ // matches ace or apace and returns nothing
+    /a(?:cr|bl)e/ // matches acre or able and returns nothing
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Deciphering Regexes</h3>
+                        <pre><code class="javascript" contenteditable>
+    /(\d+)[\,\.](?=\d{3})/
+                        </code></pre>
+                        <div class="left-align">
+                            <p class="fragment"><code>(\d+)</code> Capture one or more digits</p>
+                            <p class="fragment"><code>[\,\.]</code> A period or comma</p>
+                            <p class="fragment"><code>(?= )</code> Followed by... (<a href="http://www.regular-expressions.info/lookaround.html" target="_blank">more on looking ahead/back</a>)</p>
+                            <p class="fragment"><code>\d{3}</code> Exactly 3 digits</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Complex Replacement</h3>
+                        <pre><code class="javascript" contenteditable>
+    var pattern = /(\d+)[\,\.](?=\d{3})/g;
+    function stripSeparators(numStr) {
+        return numStr.replace(pattern, "$1");
+    }
+                        </code></pre>
+                        <p class="left-align fragment">
+                            Each time the full pattern is matched, it is replaced with the first captured group (element 1 of the array returned by the pattern match).
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <h3>Summary</h3>
+                    <p class="left-align">
+                        Regular expressions can be incredibly useful and powerful. When you start small and get familiar, they can even be fun!
+                    </p>
+                </section>
+                <section>
+                    <h2>Contact</h2>
+                    <ul>
+                        <li>phillydev slack</li>
+                        <li><a href="https://twitter.com/Not_Pele" target="_blank">@not_pele</a></li>
+                        <li>elise@girldevelopit.com</li>
+                        <li><a href="https://www.linkedin.com/in/elisewei" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </section>
 			</div>
-  		<footer>
-        <div class="copyright">
-          Intermediate Javascript -- Girl Develop It Philadelphia
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
-        </div>
-      </footer>
+  		<footer style="background-image: none"></footer>
 		</div>
-
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
